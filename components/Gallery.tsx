@@ -1,11 +1,14 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './Gallery.module.css'
-import { artworks } from '@/data/artworks'
+import { artworks, type Artwork } from '@/data/artworks'
+import ImageModal from './ImageModal'
 
 export default function Gallery() {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
+  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,6 +36,34 @@ export default function Gallery() {
     }
   }, [])
 
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handleImageClick = (artwork: Artwork) => {
+    const index = artworks.findIndex((a) => a.id === artwork.id)
+    setCurrentIndex(index)
+    setSelectedArtwork(artwork)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setTimeout(() => {
+      setSelectedArtwork(null)
+    }, 300)
+  }
+
+  const handleNext = () => {
+    const nextIndex = (currentIndex + 1) % artworks.length
+    setCurrentIndex(nextIndex)
+    setSelectedArtwork(artworks[nextIndex])
+  }
+
+  const handlePrevious = () => {
+    const prevIndex = (currentIndex - 1 + artworks.length) % artworks.length
+    setCurrentIndex(prevIndex)
+    setSelectedArtwork(artworks[prevIndex])
+  }
+
   if (artworks.length === 0) {
     return (
       <div className={styles.gallery}>
@@ -46,33 +77,45 @@ export default function Gallery() {
   }
 
   return (
-    <div className={styles.gallery}>
-      <div className={styles.galleryContainer}>
-        <div className={styles.collage}>
-          {artworks.map((artwork, index) => (
-            <div
-              key={artwork.id}
-              ref={(el) => {
-                itemsRef.current[index] = el
-              }}
-              className={styles.artworkItem}
-            >
-              <div className={styles.imageWrapper}>
-                <img
-                  src={artwork.image}
-                  alt={`${artwork.title} - UltraStruttura ${artwork.year || ''} - Contemporary Art Painting`}
-                  title={`${artwork.title} by UltraStruttura ${artwork.year || ''}`}
-                  className={styles.artworkImage}
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority={artwork.id <= 3 ? 'high' : 'low'}
-                />
+    <>
+      <div className={styles.gallery}>
+        <div className={styles.galleryContainer}>
+          <div className={styles.collage}>
+            {artworks.map((artwork, index) => (
+              <div
+                key={artwork.id}
+                ref={(el) => {
+                  itemsRef.current[index] = el
+                }}
+                className={styles.artworkItem}
+                onClick={() => handleImageClick(artwork)}
+              >
+                <div className={styles.imageWrapper}>
+                  <img
+                    src={artwork.image}
+                    alt={`${artwork.title} - UltraStruttura ${artwork.year || ''} - Contemporary Art Painting`}
+                    title={`${artwork.title} by UltraStruttura ${artwork.year || ''}`}
+                    className={styles.artworkImage}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority={artwork.id <= 3 ? 'high' : 'low'}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <ImageModal
+        artwork={selectedArtwork}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+        hasNext={currentIndex < artworks.length - 1}
+        hasPrevious={currentIndex > 0}
+      />
+    </>
   )
 }
 

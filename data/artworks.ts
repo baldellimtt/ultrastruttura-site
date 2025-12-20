@@ -15,7 +15,7 @@ export const artworks: Artwork[] = [
   {
     id: 1,
     title: 'Opera 1',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp',
@@ -23,7 +23,7 @@ export const artworks: Artwork[] = [
   {
     id: 2,
     title: 'Opera 2',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/unique-abstract-artwork-02-opera-arte-astratta-unica-02-oeuvre-art-abstraite-unique-02-einzigartiges-abstraktes-kunstwerk-02.webp',
@@ -31,7 +31,7 @@ export const artworks: Artwork[] = [
   {
     id: 3,
     title: 'Opera 3',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-abstract-painting-on-canvas-03-dipinto-astratto-su-tela-03-peinture-abstraite-sur-toile-03-abstraktes-gemaelde-auf-leinwand-03.webp',
@@ -39,7 +39,7 @@ export const artworks: Artwork[] = [
   {
     id: 4,
     title: 'Opera 4',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/contemporary-abstract-art-for-collectors-04-arte-astratta-per-collezionisti-04-art-abstrait-pour-collectionneurs-04-abstrakte-kunst-fuer-sammler-04.webp',
@@ -47,7 +47,7 @@ export const artworks: Artwork[] = [
   {
     id: 5,
     title: 'Opera 5',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-05-dipinto-astratto-contemporaneo-05-peinture-abstraite-contemporaine-05-zeitgenoessisches-abstraktes-gemaelde-05.webp',
@@ -55,7 +55,7 @@ export const artworks: Artwork[] = [
   {
     id: 6,
     title: 'Opera 6',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/unique-abstract-artwork-06-opera-arte-astratta-unica-06-oeuvre-art-abstraite-unique-06-einzigartiges-abstraktes-kunstwerk-06.webp',
@@ -63,7 +63,7 @@ export const artworks: Artwork[] = [
   {
     id: 7,
     title: 'Opera 7',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-abstract-painting-on-canvas-07-dipinto-astratto-su-tela-07-peinture-abstraite-sur-toile-07-abstraktes-gemaelde-auf-leinwand-07.webp',
@@ -71,7 +71,7 @@ export const artworks: Artwork[] = [
   {
     id: 8,
     title: 'Opera 8',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/contemporary-abstract-art-for-collectors-08-arte-astratta-per-collezionisti-08-art-abstrait-pour-collectionneurs-08-abstrakte-kunst-fuer-sammler-08.webp',
@@ -79,7 +79,7 @@ export const artworks: Artwork[] = [
   {
     id: 9,
     title: 'Opera 9',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-09-dipinto-astratto-contemporaneo-09-peinture-abstraite-contemporaine-09-zeitgenoessisches-abstraktes-gemaelde-09.webp',
@@ -87,7 +87,7 @@ export const artworks: Artwork[] = [
   {
     id: 10,
     title: 'Opera 10',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/unique-abstract-artwork-10-opera-arte-astratta-unica-10-oeuvre-art-abstraite-unique-10-einzigartiges-abstraktes-kunstwerk-10.webp',
@@ -95,7 +95,7 @@ export const artworks: Artwork[] = [
   {
     id: 11,
     title: 'Opera 11',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-abstract-painting-on-canvas-11-dipinto-astratto-su-tela-11-peinture-abstraite-sur-toile-11-abstraktes-gemaelde-auf-leinwand-11.webp',
@@ -103,7 +103,7 @@ export const artworks: Artwork[] = [
   {
     id: 12,
     title: 'Opera 12',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/contemporary-abstract-art-for-collectors-12-arte-astratta-per-collezionisti-12-art-abstrait-pour-collectionneurs-12-abstrakte-kunst-fuer-sammler-12.webp',
@@ -111,7 +111,7 @@ export const artworks: Artwork[] = [
   {
     id: 13,
     title: 'Opera 13',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-13-dipinto-astratto-contemporaneo-13-peinture-abstraite-contemporaine-13-zeitgenoessisches-abstraktes-gemaelde-13.webp',
@@ -119,7 +119,7 @@ export const artworks: Artwork[] = [
   {
     id: 14,
     title: 'Opera 14',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/unique-abstract-artwork-14-opera-arte-astratta-unica-14-oeuvre-art-abstraite-unique-14-einzigartiges-abstraktes-kunstwerk-14.webp',
@@ -127,7 +127,7 @@ export const artworks: Artwork[] = [
   {
     id: 15,
     title: 'Opera 15',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-abstract-painting-on-canvas-15-dipinto-astratto-su-tela-15-peinture-abstraite-sur-toile-15-abstraktes-gemaelde-auf-leinwand-15.webp',
@@ -135,7 +135,7 @@ export const artworks: Artwork[] = [
   {
     id: 16,
     title: 'Opera 16',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/contemporary-abstract-art-for-collectors-16-arte-astratta-per-collezionisti-16-art-abstrait-pour-collectionneurs-16-abstrakte-kunst-fuer-sammler-16.webp',
@@ -143,7 +143,7 @@ export const artworks: Artwork[] = [
   {
     id: 17,
     title: 'Opera 17',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-17-dipinto-astratto-contemporaneo-17-peinture-abstraite-contemporaine-17-zeitgenoessisches-abstraktes-gemaelde-17.webp',
@@ -151,7 +151,7 @@ export const artworks: Artwork[] = [
   {
     id: 18,
     title: 'Opera 18',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/unique-abstract-artwork-18-opera-arte-astratta-unica-18-oeuvre-art-abstraite-unique-18-einzigartiges-abstraktes-kunstwerk-18.webp',
@@ -159,7 +159,7 @@ export const artworks: Artwork[] = [
   {
     id: 19,
     title: 'Opera 19',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-abstract-painting-on-canvas-19-dipinto-astratto-su-tela-19-peinture-abstraite-sur-toile-19-abstraktes-gemaelde-auf-leinwand-19.webp',
@@ -167,7 +167,7 @@ export const artworks: Artwork[] = [
   {
     id: 20,
     title: 'Opera 20',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/contemporary-abstract-art-for-collectors-20-arte-astratta-per-collezionisti-20-art-abstrait-pour-collectionneurs-20-abstrakte-kunst-fuer-sammler-20.webp',
@@ -175,7 +175,7 @@ export const artworks: Artwork[] = [
   {
     id: 21,
     title: 'Opera 21',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-21-dipinto-astratto-contemporaneo-21-peinture-abstraite-contemporaine-21-zeitgenoessisches-abstraktes-gemaelde-21.webp',
@@ -183,7 +183,7 @@ export const artworks: Artwork[] = [
   {
     id: 22,
     title: 'Opera 22',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/unique-abstract-artwork-22-opera-arte-astratta-unica-22-oeuvre-art-abstraite-unique-22-einzigartiges-abstraktes-kunstwerk-22.webp',
@@ -191,7 +191,7 @@ export const artworks: Artwork[] = [
   {
     id: 23,
     title: 'Opera 23',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-abstract-painting-on-canvas-23-dipinto-astratto-su-tela-23-peinture-abstraite-sur-toile-23-abstraktes-gemaelde-auf-leinwand-23.webp',
@@ -199,7 +199,7 @@ export const artworks: Artwork[] = [
   {
     id: 24,
     title: 'Opera 24',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/contemporary-abstract-art-for-collectors-24-arte-astratta-per-collezionisti-24-art-abstrait-pour-collectionneurs-24-abstrakte-kunst-fuer-sammler-24.webp',
@@ -207,7 +207,7 @@ export const artworks: Artwork[] = [
   {
     id: 25,
     title: 'Opera 25',
-    year: 2024,
+    year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
     image: '/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp',
