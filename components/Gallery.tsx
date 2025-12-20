@@ -113,7 +113,11 @@ export default function Gallery() {
                   aria-label={`View ${artwork.title} (${artwork.year})`}
                 >
                   <div className={styles.imageWrapper}>
-                    {!isLoaded && <ImageSkeleton />}
+                    {!isLoaded && (
+                      <div className={styles.skeletonContainer}>
+                        <ImageSkeleton />
+                      </div>
+                    )}
                     <img
                       src={artwork.image}
                       alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
@@ -125,7 +129,6 @@ export default function Gallery() {
                       width="800"
                       height="600"
                       onLoad={() => handleImageLoad(artwork.id)}
-                      style={{ display: isLoaded ? 'block' : 'none' }}
                     />
                   </div>
                 </div>
