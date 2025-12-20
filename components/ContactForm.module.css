@@ -48,22 +48,38 @@
   font-size: 1rem;
   color: #000000;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   align-self: flex-start;
   margin-top: 0.5rem;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   min-height: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
 .submitButton:hover:not(:disabled) {
-  background: #000000;
   color: #ffffff;
 }
 
+.submitButton:hover:not(:disabled)::before {
+  left: 0;
+}
+
 .submitButton:active:not(:disabled) {
-  background: #333333;
-  color: #ffffff;
+  transform: scale(0.98);
 }
 
 .submitButton:disabled {

@@ -8,6 +8,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -21,6 +22,14 @@ body {
   color: #000000;
   line-height: 1.6;
   position: relative;
+  cursor: default;
+}
+
+/* Smooth scroll per browser che lo supportano */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @media (max-width: 768px) {
@@ -38,5 +47,30 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Selezione testo personalizzata */
+::selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Focus visibile per accessibilità */
+*:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions per tutti gli elementi interattivi */
+button,
+a,
+input,
+textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

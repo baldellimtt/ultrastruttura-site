@@ -54,12 +54,17 @@
 .logoText {
   font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
   font-size: 1rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: lowercase;
   font-weight: 400;
   color: #000000;
   margin: 0;
   padding: 0;
+  transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoLink:hover .logoText {
+  letter-spacing: 0.2em;
 }
 
 .menuToggle {
@@ -81,15 +86,32 @@
   letter-spacing: 0.05em;
   text-transform: none;
   font-weight: 400;
-  transition: opacity 0.2s;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   padding: 0.25rem 0;
   color: #000000;
+  position: relative;
+}
+
+.menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000000;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu li a:hover {
-  opacity: 0.5;
-  color: #000000;
+  opacity: 0.6;
+  transform: translateX(4px);
+}
+
+.menu li a:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

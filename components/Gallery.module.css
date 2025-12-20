@@ -13,24 +13,39 @@
 .collage {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem 0;
+  gap: 2rem;
+  padding: 2rem 0;
+  align-items: start;
 }
 
 .artworkItem {
   width: 100%;
   overflow: hidden;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-tap-highlight-color: transparent;
 }
 
-.artworkItem:hover {
-  opacity: 0.7;
+.artworkItem.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.artworkItem:active {
-  opacity: 0.5;
+.imageWrapper {
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artworkItem:hover .imageWrapper {
+  transform: scale(1.02);
+}
+
+.artworkItem:active .imageWrapper {
+  transform: scale(0.98);
 }
 
 .artworkImage {
@@ -40,6 +55,11 @@
   object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artworkItem:hover .artworkImage {
+  filter: brightness(0.95);
 }
 
 @media (max-width: 1200px) {
