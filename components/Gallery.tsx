@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './Gallery.module.css'
 import { artworks, type Artwork } from '@/data/artworks'
 import ImageModal from './ImageModal'
+import ImageSkeleton from './ImageSkeleton'
 
 export default function Gallery() {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,6 +45,20 @@ export default function Gallery() {
     setCurrentIndex(index)
     setSelectedArtwork(artwork)
     setIsModalOpen(true)
+  }
+
+  const handleImageLoad = (artworkId: number) => {
+    setLoadedImages((prev) => new Set(prev).add(artworkId))
+  }
+
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLDivElement>,
+    artwork: Artwork
+  ) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleImageClick(artwork)
+    }
   }
 
   const handleCloseModal = () => {
@@ -81,30 +97,40 @@ export default function Gallery() {
       <div className={styles.gallery}>
         <div className={styles.galleryContainer}>
           <div className={styles.collage}>
-            {artworks.map((artwork, index) => (
-              <div
-                key={artwork.id}
-                ref={(el) => {
-                  itemsRef.current[index] = el
-                }}
-                className={styles.artworkItem}
-                onClick={() => handleImageClick(artwork)}
-              >
-                <div className={styles.imageWrapper}>
-                  <img
-                    src={artwork.image}
-                    alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
-                    title={`${artwork.title} (${artwork.year}) by UltraStruttura`}
-                    className={styles.artworkImage}
-                    loading={index < 3 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    fetchPriority={index < 3 ? 'high' : 'low'}
-                    width="800"
-                    height="600"
-                  />
+            {artworks.map((artwork, index) => {
+              const isLoaded = loadedImages.has(artwork.id)
+              return (
+                <div
+                  key={artwork.id}
+                  ref={(el) => {
+                    itemsRef.current[index] = el
+                  }}
+                  className={styles.artworkItem}
+                  onClick={() => handleImageClick(artwork)}
+                  onKeyDown={(e) => handleKeyDown(e, artwork)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View ${artwork.title} (${artwork.year})`}
+                >
+                  <div className={styles.imageWrapper}>
+                    {!isLoaded && <ImageSkeleton />}
+                    <img
+                      src={artwork.image}
+                      alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
+                      title={`${artwork.title} (${artwork.year}) by UltraStruttura`}
+                      className={`${styles.artworkImage} ${isLoaded ? styles.artworkImageLoaded : styles.artworkImageLoading}`}
+                      loading={index < 3 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      fetchPriority={index < 3 ? 'high' : 'low'}
+                      width="800"
+                      height="600"
+                      onLoad={() => handleImageLoad(artwork.id)}
+                      style={{ display: isLoaded ? 'block' : 'none' }}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

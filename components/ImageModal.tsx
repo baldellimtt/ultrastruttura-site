@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import styles from './ImageModal.module.css'
 import { Artwork } from '@/data/artworks'
 
@@ -35,6 +35,10 @@ export default function ImageModal({
     }
   }, [isOpen])
 
+  // Focus trap e keyboard navigation
+  const modalRef = useRef<HTMLDivElement>(null)
+  const previousActiveElementRef = useRef<HTMLElement | null>(null)
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -43,15 +47,53 @@ export default function ImageModal({
         onNext()
       } else if (e.key === 'ArrowLeft' && hasPrevious) {
         onPrevious()
+      } else if (e.key === 'Tab') {
+        // Focus trap: mantiene il focus dentro il modal
+        if (!modalRef.current) return
+        
+        const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+        const firstElement = focusableElements[0]
+        const lastElement = focusableElements[focusableElements.length - 1]
+
+        if (e.shiftKey) {
+          // Shift + Tab
+          if (document.activeElement === firstElement) {
+            e.preventDefault()
+            lastElement?.focus()
+          }
+        } else {
+          // Tab
+          if (document.activeElement === lastElement) {
+            e.preventDefault()
+            firstElement?.focus()
+          }
+        }
       }
     }
 
     if (isOpen) {
+      // Salva l'elemento attivo prima di aprire il modal
+      previousActiveElementRef.current = document.activeElement as HTMLElement
+      
       window.addEventListener('keydown', handleKeyDown)
+      
+      // Focus sul primo elemento focusabile del modal
+      setTimeout(() => {
+        const firstFocusable = modalRef.current?.querySelector<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+        firstFocusable?.focus()
+      }, 100)
     }
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
+      // Ripristina il focus quando il modal si chiude
+      if (previousActiveElementRef.current) {
+        previousActiveElementRef.current.focus()
+      }
     }
   }, [isOpen, onClose, onNext, onPrevious, hasNext, hasPrevious])
 
@@ -59,7 +101,14 @@ export default function ImageModal({
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
-      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+      <div 
+        ref={modalRef}
+        className={styles.modalContent} 
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="artwork-title"
+      >
         <button className={styles.closeButton} onClick={onClose} aria-label="Close">
           <svg
             width="24"
@@ -130,13 +179,15 @@ export default function ImageModal({
 
         <div className={styles.imageContainer}>
           <img
-            src={`${artwork.image}?v=${Date.now()}`}
-            alt={`${artwork.title} - UltraStruttura ${artwork.year || ''}`}
+            src={artwork.image}
+            alt={`${artwork.title} (${artwork.year || ''}) - UltraStruttura - Contemporary Abstract Painting`}
             className={styles.modalImage}
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
         <div className={styles.artworkInfo}>
-          <h2 className={styles.artworkTitle}>
+          <h2 id="artwork-title" className={styles.artworkTitle}>
             {artwork.title} ({artwork.year})
           </h2>
         </div>

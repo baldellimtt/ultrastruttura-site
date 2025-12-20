@@ -39,7 +39,7 @@ export default function Navigation() {
         onClick={handleCloseMenu}
         aria-hidden={!isMenuOpen}
       />
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.navMenuOpen : ''}`}>
         <div className={styles.navContainer}>
           <Link href="/" className={styles.logoLink} onClick={handleMenuLinkClick}>
             <div className={styles.logoContainer}>

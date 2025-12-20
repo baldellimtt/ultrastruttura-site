@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import StructuredData from '@/components/StructuredData'
+import ScrollProgress from '@/components/ScrollProgress'
+import ErrorBoundary from '@/components/ErrorBoundary'
 
 export const metadata: Metadata = {
   title: 'ultrastruttura - Contemporary Abstract Paintings | Unique Abstract Artwork',
@@ -61,11 +63,25 @@ export const metadata: Metadata = {
     locale: 'it_IT',
     alternateLocale: ['en_US', 'de_DE', 'fr_FR', 'ja_JP'],
     siteName: 'ultrastruttura',
+    url: 'https://ultrastruttura.com',
+    images: [
+      {
+        url: 'https://ultrastruttura.com/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ultrastruttura - Contemporary Abstract Art',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ultrastruttura - Contemporary Abstract Paintings',
     description: 'Contemporary abstract paintings, unique abstract artwork, contemporary abstract art for collectors',
+    creator: '@ultrastruttura',
+    images: ['https://ultrastruttura.com/logo.webp'],
+  },
+  other: {
+    'instagram:creator': '@ultrastruttura',
   },
   alternates: {
     canonical: 'https://ultrastruttura.com',
@@ -113,8 +129,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <StructuredData />
-        {children}
+        <ErrorBoundary>
+          <StructuredData />
+          <ScrollProgress />
+          {children}
+        </ErrorBoundary>
       </body>
     </html>
   )

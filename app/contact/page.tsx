@@ -1,13 +1,18 @@
 import ContactForm from '@/components/ContactForm'
 import Navigation from '@/components/Navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import styles from './page.module.css'
 import layoutStyles from '../page.module.css'
 
 export default function Contact() {
   return (
     <div className={layoutStyles.layout}>
+      <a href="#main-content" className={layoutStyles.skipLink}>
+        Skip to main content
+      </a>
       <Navigation />
-      <main className={layoutStyles.main}>
+      <main id="main-content" className={layoutStyles.main}>
+        <Breadcrumbs />
         <div className={styles.contact}>
           <div className={styles.contactContainer}>
             <div className={styles.info}>
