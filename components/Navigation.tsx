@@ -6,7 +6,6 @@ import styles from './Navigation.module.css'
 
 const menuItems = [
   'Paintings',
-  'Bio',
   'Contact',
 ]
 
