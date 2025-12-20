@@ -1,0 +1,34 @@
+.header {
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem 1rem;
+    margin-top: 60px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+

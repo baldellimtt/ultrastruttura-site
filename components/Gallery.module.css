@@ -1,0 +1,108 @@
+.gallery {
+  padding: 2rem;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+}
+
+.galleryContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.artworkItem {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.artworkItem:hover {
+  opacity: 0.7;
+}
+
+.artworkItem:active {
+  opacity: 0.5;
+}
+
+.artworkImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+@media (max-width: 1200px) {
+  .collage {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery {
+    padding: 1.5rem;
+  }
+
+  .collage {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 1rem 0.75rem;
+    min-height: calc(100vh - 60px);
+  }
+
+  .collage {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    padding: 0.75rem 0.5rem;
+    min-height: calc(100vh - 56px);
+  }
+
+  .collage {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .artworkItem {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .gallery {
+    padding: 0.5rem;
+  }
+
+  .collage {
+    gap: 1rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .gallery {
+    min-height: calc(100vh - 50px);
+  }
+}

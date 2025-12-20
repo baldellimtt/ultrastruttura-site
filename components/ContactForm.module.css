@@ -1,0 +1,101 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.field {
+  width: 100%;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background: transparent;
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #000000;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.input:focus,
+.textarea:focus {
+  border-bottom-color: #666666;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.submitButton {
+  padding: 0.75rem 2rem;
+  border: 1px solid #000000;
+  background: transparent;
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #000000;
+  color: #ffffff;
+}
+
+.submitButton:active:not(:disabled) {
+  background: #333333;
+  color: #ffffff;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .submitButton {
+    width: 100%;
+    align-self: stretch;
+    padding: 0.875rem 2rem;
+  }
+
+  .input,
+  .textarea {
+    font-size: 16px; /* Previene zoom su iOS */
+  }
+}
+
+.successMessage,
+.errorMessage {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.successMessage {
+  color: #000000;
+}
+
+.errorMessage {
+  color: #cc0000;
+}
+

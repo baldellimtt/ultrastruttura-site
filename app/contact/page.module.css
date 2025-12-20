@@ -1,0 +1,145 @@
+.contact {
+  padding: 2rem;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+}
+
+.contactContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.name {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.location {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #000000;
+  margin: 0;
+}
+
+.usedToBe {
+  margin-top: 1rem;
+}
+
+.label {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 0.5rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.links li a {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.links li a:hover {
+  opacity: 0.6;
+}
+
+.links li a:active {
+  opacity: 0.4;
+}
+
+.formSection {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding: 1.5rem;
+  }
+
+  .contactContainer {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 1.5rem 1rem;
+    min-height: calc(100vh - 60px);
+  }
+
+  .contactContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .name {
+    font-size: 1.75rem;
+  }
+
+  .info {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 1rem 0.75rem;
+    min-height: calc(100vh - 56px);
+  }
+
+  .contactContainer {
+    gap: 2rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .location {
+    font-size: 0.9375rem;
+  }
+
+  .links li a {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .contact {
+    min-height: calc(100vh - 50px);
+    padding: 1rem;
+  }
+
+  .contactContainer {
+    gap: 2rem;
+  }
+}
+
