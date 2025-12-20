@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import styles from './Navigation.module.css'
 
@@ -11,6 +11,36 @@ const menuItems = [
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
+  const [navHeight, setNavHeight] = useState(60) // Default fallback
+
+  // Calcola l'altezza reale del nav per posizionare il menu correttamente
+  useEffect(() => {
+    const updateNavHeight = () => {
+      if (navRef.current) {
+        const height = navRef.current.offsetHeight
+        setNavHeight(height)
+        // Imposta variabile CSS per uso nel CSS
+        document.documentElement.style.setProperty('--nav-height', `${height}px`)
+      }
+    }
+
+    updateNavHeight()
+
+    // Aggiorna quando la finestra viene ridimensionata o quando il menu si apre/chiude
+    window.addEventListener('resize', updateNavHeight)
+    
+    // Usa ResizeObserver per rilevare cambiamenti nell'altezza del nav
+    const resizeObserver = new ResizeObserver(updateNavHeight)
+    if (navRef.current) {
+      resizeObserver.observe(navRef.current)
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateNavHeight)
+      resizeObserver.disconnect()
+    }
+  }, [isMenuOpen]) // Ricontrolla quando il menu si apre/chiude
 
   // Prevenire lo scroll del body quando il menu è aperto su mobile
   useEffect(() => {
@@ -39,7 +69,11 @@ export default function Navigation() {
         onClick={handleCloseMenu}
         aria-hidden={!isMenuOpen}
       />
-      <nav className={`${styles.nav} ${isMenuOpen ? styles.navMenuOpen : ''}`}>
+      <nav 
+        ref={navRef}
+        className={`${styles.nav} ${isMenuOpen ? styles.navMenuOpen : ''}`}
+        style={{ '--nav-height': `${navHeight}px` } as React.CSSProperties}
+      >
         <div className={styles.navContainer}>
           <Link href="/" className={styles.logoLink} onClick={handleMenuLinkClick}>
             <div className={styles.logoContainer}>

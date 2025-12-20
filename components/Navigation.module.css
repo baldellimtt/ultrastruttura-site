@@ -164,10 +164,6 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
-  .navMenuOpen {
-    z-index: 1003;
-  }
-
   .navContainer {
     flex-direction: row;
     justify-content: space-between;
@@ -185,7 +181,6 @@
     background-color: #ffffff;
     padding: 0.25rem;
     border-radius: 2px;
-    z-index: 1005;
   }
 
   .logoContainer {
@@ -226,7 +221,8 @@
 
   .menu {
     position: fixed;
-    top: 60px;
+    /* Usa la variabile CSS calcolata dinamicamente, con fallback a 60px */
+    top: var(--nav-height, 60px);
     left: 0;
     right: 0;
     background-color: #ffffff;
@@ -237,8 +233,9 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    max-height: calc(100vh - 60px);
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                top 0.1s ease;
+    max-height: calc(100vh - var(--nav-height, 60px));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 1000;
@@ -265,7 +262,13 @@
     padding: 0.5rem 0.75rem;
     min-height: 56px;
     /* Migliora performance su schermi piccoli */
-    will-change: transform;
+    will-change: transform, height;
+  }
+
+  .menu {
+    /* Assicura che su schermi piccoli il menu parta sempre dopo il nav */
+    top: var(--nav-height, 56px);
+    max-height: calc(100vh - var(--nav-height, 56px));
   }
 
   .logoLink {
