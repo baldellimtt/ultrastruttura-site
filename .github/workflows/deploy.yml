@@ -6,16 +6,19 @@ on:
       - main
       - master # Supporta entrambi i branch
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -25,9 +28,6 @@ jobs:
       
       - name: Build
         run: npm run build
-        env:
-          # Aggiungi qui le variabili d'ambiente se necessario
-          # NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.FORMSPREE_ID }}
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
