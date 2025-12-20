@@ -69,6 +69,12 @@
 
 .menuToggle {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
 }
 
 .menu {
@@ -114,7 +120,31 @@
   width: 100%;
 }
 
+.menuOverlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .menuOverlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .menuOverlay[aria-hidden="false"],
+  .menuOverlay:not([aria-hidden="true"]) {
+    opacity: 1;
+    pointer-events: all;
+  }
+
   .nav {
     position: fixed;
     top: 0;
@@ -129,6 +159,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 0.75rem 1rem;
     overflow: visible;
+    z-index: 1001;
   }
 
   .navContainer {
@@ -156,7 +187,6 @@
 
   .menuToggle {
     display: block;
-    cursor: pointer;
     font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
     font-size: 1rem;
     letter-spacing: 0.05em;
@@ -165,6 +195,11 @@
     padding: 0.5rem;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu {
@@ -175,14 +210,16 @@
     background-color: #ffffff;
     padding: 1.5rem 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     max-height: calc(100vh - 60px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    z-index: 1000;
   }
 
   .menuOpen {
@@ -195,6 +232,9 @@
     font-size: 1rem;
     padding: 0.75rem 0;
     -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -202,14 +242,21 @@
   .nav {
     padding: 0.5rem 0.75rem;
     min-height: 56px;
+    /* Migliora performance su schermi piccoli */
+    will-change: transform;
   }
 
   .logoLink {
     max-width: 70px;
+    /* Ottimizzazione touch */
+    touch-action: manipulation;
   }
 
   .logo {
     max-width: 70px;
+    /* GPU acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   .logoText {
@@ -218,11 +265,15 @@
 
   .menuToggle {
     font-size: 0.875rem;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .menu {
     top: 56px;
     max-height: calc(100vh - 56px);
+    /* Migliora performance animazioni */
+    will-change: transform, opacity;
   }
 }
 

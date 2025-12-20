@@ -4,7 +4,7 @@ import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title: 'ultrastruttura - Contemporary Abstract Paintings | Unique Abstract Artwork',
-  description: 'Original contemporary abstract paintings by UltraStruttura. Unique abstract artwork, original abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei originali, opere d\'arte astratte uniche, arte astratta contemporanea per collezionisti. Peintures abstraites contemporaines originales, œuvres d\'art abstraites uniques. Originales zeitgenössisches abstraktes Gemälde, einzigartiges abstraktes Kunstwerk.',
+  description: 'Contemporary abstract paintings by UltraStruttura. Unique abstract artwork, original abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei, opere d\'arte astratte uniche, arte astratta contemporanea per collezionisti. Peintures abstraites contemporaines, œuvres d\'art abstraites uniques. Zeitgenössisches abstraktes Gemälde, einzigartiges abstraktes Kunstwerk.',
   keywords: [
     'ultrastruttura',
     'original contemporary abstract painting',
@@ -88,10 +88,29 @@ export default function RootLayout({
   return (
     <html lang="it">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <link rel="canonical" href="https://ultrastruttura.com" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="format-detection" content="telephone=no" />
+        
+        {/* Resource hints per performance */}
+        <link rel="preconnect" href="https://www.instagram.com" />
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
+        
+        {/* Preload del logo critico */}
+        <link 
+          rel="preload" 
+          href="/logo.webp" 
+          as="image" 
+          type="image/webp"
+          fetchPriority="high"
+        />
+        <link 
+          rel="preload" 
+          href="/favicon.webp" 
+          as="image" 
+          type="image/webp"
+        />
       </head>
       <body>
         <StructuredData />

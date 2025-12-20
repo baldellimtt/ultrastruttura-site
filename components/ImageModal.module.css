@@ -148,21 +148,33 @@
 @media (max-width: 768px) {
   .modalOverlay {
     padding: 1rem;
+    /* Ottimizzazione performance mobile */
+    will-change: opacity;
+    -webkit-overflow-scrolling: touch;
   }
 
   .modalContent {
     max-width: 95vw;
+    /* GPU acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   .closeButton {
     top: -2.5rem;
     right: -0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
   }
 
   .navButton {
     width: 40px;
     height: 40px;
     padding: 0.75rem;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
   }
 
   .navButton[style*='left'] {
@@ -175,10 +187,17 @@
 
   .imageContainer {
     margin-bottom: 1.5rem;
+    /* Ottimizzazione rendering */
+    contain: layout style paint;
   }
 
   .modalImage {
     max-height: 70vh;
+    /* GPU acceleration per immagini grandi */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .artworkTitle {
@@ -198,6 +217,19 @@
   .closeButton {
     top: -2rem;
     right: 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .modalImage {
+    max-height: 65vh;
   }
 
   .artworkTitle {

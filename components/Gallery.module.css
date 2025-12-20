@@ -69,8 +69,14 @@
   display: block;
   object-fit: contain;
   object-position: center;
+  /* Ottimizzazione rendering immagini */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  /* GPU acceleration per transizioni */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 !important;
   padding: 0 !important;
@@ -108,12 +114,29 @@
   .gallery {
     padding: 1rem 0.75rem;
     min-height: calc(100vh - 60px);
+    /* Migliora performance su mobile */
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+  }
+
+  .galleryContainer {
+    /* Riduce reflow su mobile */
+    contain: layout style paint;
   }
 
   .collage {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.75rem;
     padding: 0.5rem 0;
+    /* Ottimizzazione rendering mobile */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  .artworkItem {
+    /* Migliora performance touch */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

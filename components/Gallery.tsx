@@ -92,13 +92,15 @@ export default function Gallery() {
               >
                 <div className={styles.imageWrapper}>
                   <img
-                    src={`${artwork.image}?v=${Date.now()}`}
-                    alt={`${artwork.title} - UltraStruttura ${artwork.year || ''} - Contemporary Art Painting`}
-                    title={`${artwork.title} by UltraStruttura ${artwork.year || ''}`}
+                    src={artwork.image}
+                    alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
+                    title={`${artwork.title} (${artwork.year}) by UltraStruttura`}
                     className={styles.artworkImage}
-                    loading="lazy"
+                    loading={index < 3 ? 'eager' : 'lazy'}
                     decoding="async"
-                    fetchPriority={artwork.id <= 3 ? 'high' : 'low'}
+                    fetchPriority={index < 3 ? 'high' : 'low'}
+                    width="800"
+                    height="600"
                   />
                 </div>
               </div>

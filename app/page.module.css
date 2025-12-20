@@ -25,6 +25,11 @@
     margin-top: 0;
     width: 100%;
     padding-top: 60px;
+    /* Migliora performance scroll su mobile */
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    /* Previene scroll orizzontale accidentale */
+    overflow-x: hidden;
   }
 }
 

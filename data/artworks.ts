@@ -13,12 +13,12 @@ export interface Artwork {
 
 export const artworks: Artwork[] = [
   {
-    id: 1,
-    title: 'Opera 1',
+    id: 25,
+    title: 'Opera 25',
     year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp',
+    image: '/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp',
   },
   {
     id: 2,
@@ -205,11 +205,11 @@ export const artworks: Artwork[] = [
     image: '/artworks/contemporary-abstract-art-for-collectors-24-arte-astratta-per-collezionisti-24-art-abstrait-pour-collectionneurs-24-abstrakte-kunst-fuer-sammler-24.webp',
   },
   {
-    id: 25,
-    title: 'Opera 25',
+    id: 1,
+    title: 'Opera 1',
     year: 2025,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp',
+    image: '/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp',
   },
 ]
