@@ -37,6 +37,25 @@
   margin: 0;
 }
 
+.email {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.email:hover {
+  opacity: 0.6;
+}
+
+.email:active {
+  opacity: 0.4;
+}
+
 .usedToBe {
   margin-top: 1rem;
 }

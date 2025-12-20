@@ -13,6 +13,9 @@ export default function Contact() {
             <div className={styles.info}>
               <h1 className={styles.name}>Andrea</h1>
               <p className={styles.location}>Bergamo, Italy</p>
+              <a href="mailto:andrea.baldelli@icloud.com" className={styles.email}>
+                andrea.baldelli@icloud.com
+              </a>
               
               <div className={styles.usedToBe}>
                 <p className={styles.label}>Used to be:</p>
