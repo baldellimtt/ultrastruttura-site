@@ -49,15 +49,41 @@ export default function Gallery() {
   }
 
   const handleImageLoad = (artworkId: number) => {
-    setLoadedImages((prev) => new Set(prev).add(artworkId))
+    setLoadedImages((prev) => {
+      const newSet = new Set(prev)
+      newSet.add(artworkId)
+      return newSet
+    })
   }
 
-  const checkImageLoaded = (index: number, artworkId: number) => {
-    const img = imageRefs.current[index]
-    if (img && (img.complete || img.naturalHeight > 0)) {
-      setLoadedImages((prev) => new Set(prev).add(artworkId))
+  // Verifica se le immagini sono già caricate (cache del browser)
+  useEffect(() => {
+    const checkCachedImages = () => {
+      imageRefs.current.forEach((img, index) => {
+        if (img && artworks[index]) {
+          const artworkId = artworks[index].id
+          if (img.complete && img.naturalHeight > 0) {
+            setLoadedImages((prev) => {
+              if (!prev.has(artworkId)) {
+                const newSet = new Set(prev)
+                newSet.add(artworkId)
+                return newSet
+              }
+              return prev
+            })
+          }
+        }
+      })
     }
-  }
+    
+    // Controlla immediatamente
+    checkCachedImages()
+    
+    // Controlla anche dopo un breve delay per gestire immagini che si caricano molto velocemente
+    const timeoutId = setTimeout(checkCachedImages, 100)
+    
+    return () => clearTimeout(timeoutId)
+  }, [])
 
   const handleKeyDown = (
     e: React.KeyboardEvent<HTMLDivElement>,
@@ -129,15 +155,6 @@ export default function Gallery() {
                     <img
                       ref={(el) => {
                         imageRefs.current[index] = el
-                        if (el) {
-                          // Verifica se l'immagine è già caricata (cache del browser)
-                          if (el.complete && el.naturalHeight > 0) {
-                            handleImageLoad(artwork.id)
-                          } else {
-                            // Verifica dopo un breve delay per gestire il caso di immagini già in cache
-                            setTimeout(() => checkImageLoaded(index, artwork.id), 0)
-                          }
-                        }
                       }}
                       src={artwork.image}
                       alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
@@ -149,7 +166,7 @@ export default function Gallery() {
                       width="800"
                       height="600"
                       onLoad={() => handleImageLoad(artwork.id)}
-                      onError={() => handleImageLoad(artwork.id)} // Rimuove skeleton anche in caso di errore
+                      onError={() => handleImageLoad(artwork.id)}
                     />
                   </div>
                 </div>
