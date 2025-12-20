@@ -130,7 +130,7 @@ export default function ImageModal({
 
         <div className={styles.imageContainer}>
           <img
-            src={artwork.image}
+            src={`${artwork.image}?v=${Date.now()}`}
             alt={`${artwork.title} - UltraStruttura ${artwork.year || ''}`}
             className={styles.modalImage}
           />

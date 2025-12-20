@@ -3,7 +3,7 @@ import './globals.css'
 import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
-  title: 'ultrastruttura - Original Contemporary Abstract Paintings | Unique Abstract Artwork',
+  title: 'ultrastruttura - Contemporary Abstract Paintings | Unique Abstract Artwork',
   description: 'Original contemporary abstract paintings by UltraStruttura. Unique abstract artwork, original abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei originali, opere d\'arte astratte uniche, arte astratta contemporanea per collezionisti. Peintures abstraites contemporaines originales, œuvres d\'art abstraites uniques. Originales zeitgenössisches abstraktes Gemälde, einzigartiges abstraktes Kunstwerk.',
   keywords: [
     'ultrastruttura',
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     apple: '/favicon.webp',
   },
   openGraph: {
-    title: 'ultrastruttura - Original Contemporary Abstract Paintings',
-    description: 'Original contemporary abstract paintings by UltraStruttura. Unique abstract artwork, original abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei originali, opere d\'arte astratte uniche.',
+    title: 'ultrastruttura - Contemporary Abstract Paintings',
+    description: 'Contemporary abstract paintings by UltraStruttura. Unique abstract artwork, abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei, opere d\'arte astratte uniche.',
     type: 'website',
     locale: 'it_IT',
     alternateLocale: ['en_US', 'de_DE', 'fr_FR', 'ja_JP'],
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ultrastruttura - Original Contemporary Abstract Paintings',
-    description: 'Original contemporary abstract paintings, unique abstract artwork, contemporary abstract art for collectors',
+    title: 'ultrastruttura - Contemporary Abstract Paintings',
+    description: 'Contemporary abstract paintings, unique abstract artwork, contemporary abstract art for collectors',
   },
   alternates: {
     canonical: 'https://ultrastruttura.com',

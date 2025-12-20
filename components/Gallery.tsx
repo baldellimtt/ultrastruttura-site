@@ -92,7 +92,7 @@ export default function Gallery() {
               >
                 <div className={styles.imageWrapper}>
                   <img
-                    src={artwork.image}
+                    src={`${artwork.image}?v=${Date.now()}`}
                     alt={`${artwork.title} - UltraStruttura ${artwork.year || ''} - Contemporary Art Painting`}
                     title={`${artwork.title} by UltraStruttura ${artwork.year || ''}`}
                     className={styles.artworkImage}

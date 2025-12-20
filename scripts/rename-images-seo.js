@@ -33,3 +33,8 @@ files.forEach((file, index) => {
 
 console.log('\nScript completato. Decommenta fs.renameSync per eseguire il rename.');
 
+
+
+
+
+

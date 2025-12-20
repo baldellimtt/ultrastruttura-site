@@ -46,3 +46,8 @@ Se usi Vercel, aggiungi le variabili d'ambiente nella dashboard:
 Per testare localmente, i dati del form vengono loggati nella console del server.
 In produzione, configura uno dei servizi sopra.
 
+
+
+
+
+

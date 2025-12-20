@@ -9,6 +9,7 @@
   margin-left: 200px;
   padding: 0;
   width: calc(100% - 200px);
+  background-color: #ffffff;
 }
 
 @media (max-width: 1024px) {

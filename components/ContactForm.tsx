@@ -26,12 +26,24 @@ export default function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/contact', {
+      // Usa Formspree per GitHub Pages (servizio esterno gratuito)
+      // Sostituisci 'YOUR_FORMSPREE_ID' con il tuo ID da formspree.io
+      const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ID 
+        ? `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`
+        : '/api/contact' // Fallback per sviluppo locale
+
+      const response = await fetch(formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _replyto: formData.email, // Per Formspree
+        }),
       })
 
       const data = await response.json()

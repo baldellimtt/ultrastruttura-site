@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build",
+    "deploy": "next build && echo 'Build completato! Ora puoi fare push della cartella out/ su GitHub Pages'"
   },
   "dependencies": {
     "next": "^15.1.0",
