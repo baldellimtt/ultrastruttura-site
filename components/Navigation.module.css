@@ -168,10 +168,6 @@
     z-index: 1003;
   }
 
-  .navMenuOpen .logoLink {
-    z-index: 1005;
-  }
-
   .navContainer {
     flex-direction: row;
     justify-content: space-between;
@@ -185,13 +181,11 @@
     margin-bottom: 0;
     max-width: 80px;
     flex-shrink: 0;
-    z-index: 1004;
     position: relative;
     background-color: #ffffff;
     padding: 0.25rem;
     border-radius: 2px;
-    /* Assicura che il logo sia sempre sopra il menu */
-    isolation: isolate;
+    z-index: 1005;
   }
 
   .logoContainer {
@@ -247,7 +241,7 @@
     max-height: calc(100vh - 60px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    z-index: 1002;
+    z-index: 1000;
   }
 
   .menuOpen {

@@ -8,6 +8,7 @@ import ImageSkeleton from './ImageSkeleton'
 
 export default function Gallery() {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
+  const imageRefs = useRef<(HTMLImageElement | null)[]>([])
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
@@ -49,6 +50,13 @@ export default function Gallery() {
 
   const handleImageLoad = (artworkId: number) => {
     setLoadedImages((prev) => new Set(prev).add(artworkId))
+  }
+
+  const checkImageLoaded = (index: number, artworkId: number) => {
+    const img = imageRefs.current[index]
+    if (img && (img.complete || img.naturalHeight > 0)) {
+      setLoadedImages((prev) => new Set(prev).add(artworkId))
+    }
   }
 
   const handleKeyDown = (
@@ -119,6 +127,18 @@ export default function Gallery() {
                       </div>
                     )}
                     <img
+                      ref={(el) => {
+                        imageRefs.current[index] = el
+                        if (el) {
+                          // Verifica se l'immagine è già caricata (cache del browser)
+                          if (el.complete && el.naturalHeight > 0) {
+                            handleImageLoad(artwork.id)
+                          } else {
+                            // Verifica dopo un breve delay per gestire il caso di immagini già in cache
+                            setTimeout(() => checkImageLoaded(index, artwork.id), 0)
+                          }
+                        }
+                      }}
                       src={artwork.image}
                       alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
                       title={`${artwork.title} (${artwork.year}) by UltraStruttura`}
@@ -129,6 +149,7 @@ export default function Gallery() {
                       width="800"
                       height="600"
                       onLoad={() => handleImageLoad(artwork.id)}
+                      onError={() => handleImageLoad(artwork.id)} // Rimuove skeleton anche in caso di errore
                     />
                   </div>
                 </div>
