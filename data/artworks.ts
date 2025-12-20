@@ -18,7 +18,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-1.webp',
+    image: '/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-2.webp',
+    image: '/artworks/unique-abstract-artwork-02-opera-arte-astratta-unica-02-oeuvre-art-abstraite-unique-02-einzigartiges-abstraktes-kunstwerk-02.webp',
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-3.webp',
+    image: '/artworks/original-abstract-painting-on-canvas-03-dipinto-astratto-su-tela-03-peinture-abstraite-sur-toile-03-abstraktes-gemaelde-auf-leinwand-03.webp',
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-4.webp',
+    image: '/artworks/contemporary-abstract-art-for-collectors-04-arte-astratta-per-collezionisti-04-art-abstrait-pour-collectionneurs-04-abstrakte-kunst-fuer-sammler-04.webp',
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-5.webp',
+    image: '/artworks/original-contemporary-abstract-painting-05-dipinto-astratto-contemporaneo-05-peinture-abstraite-contemporaine-05-zeitgenoessisches-abstraktes-gemaelde-05.webp',
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-6.webp',
+    image: '/artworks/unique-abstract-artwork-06-opera-arte-astratta-unica-06-oeuvre-art-abstraite-unique-06-einzigartiges-abstraktes-kunstwerk-06.webp',
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-7.webp',
+    image: '/artworks/original-abstract-painting-on-canvas-07-dipinto-astratto-su-tela-07-peinture-abstraite-sur-toile-07-abstraktes-gemaelde-auf-leinwand-07.webp',
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-8.webp',
+    image: '/artworks/contemporary-abstract-art-for-collectors-08-arte-astratta-per-collezionisti-08-art-abstrait-pour-collectionneurs-08-abstrakte-kunst-fuer-sammler-08.webp',
   },
   {
     id: 9,
@@ -82,7 +82,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-9.webp',
+    image: '/artworks/original-contemporary-abstract-painting-09-dipinto-astratto-contemporaneo-09-peinture-abstraite-contemporaine-09-zeitgenoessisches-abstraktes-gemaelde-09.webp',
   },
   {
     id: 10,
@@ -90,7 +90,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-10.webp',
+    image: '/artworks/unique-abstract-artwork-10-opera-arte-astratta-unica-10-oeuvre-art-abstraite-unique-10-einzigartiges-abstraktes-kunstwerk-10.webp',
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-11.webp',
+    image: '/artworks/original-abstract-painting-on-canvas-11-dipinto-astratto-su-tela-11-peinture-abstraite-sur-toile-11-abstraktes-gemaelde-auf-leinwand-11.webp',
   },
   {
     id: 12,
@@ -106,7 +106,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-12.webp',
+    image: '/artworks/contemporary-abstract-art-for-collectors-12-arte-astratta-per-collezionisti-12-art-abstrait-pour-collectionneurs-12-abstrakte-kunst-fuer-sammler-12.webp',
   },
   {
     id: 13,
@@ -114,7 +114,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-13.webp',
+    image: '/artworks/original-contemporary-abstract-painting-13-dipinto-astratto-contemporaneo-13-peinture-abstraite-contemporaine-13-zeitgenoessisches-abstraktes-gemaelde-13.webp',
   },
   {
     id: 14,
@@ -122,7 +122,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-14.webp',
+    image: '/artworks/unique-abstract-artwork-14-opera-arte-astratta-unica-14-oeuvre-art-abstraite-unique-14-einzigartiges-abstraktes-kunstwerk-14.webp',
   },
   {
     id: 15,
@@ -130,7 +130,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-15.webp',
+    image: '/artworks/original-abstract-painting-on-canvas-15-dipinto-astratto-su-tela-15-peinture-abstraite-sur-toile-15-abstraktes-gemaelde-auf-leinwand-15.webp',
   },
   {
     id: 16,
@@ -138,7 +138,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-16.webp',
+    image: '/artworks/contemporary-abstract-art-for-collectors-16-arte-astratta-per-collezionisti-16-art-abstrait-pour-collectionneurs-16-abstrakte-kunst-fuer-sammler-16.webp',
   },
   {
     id: 17,
@@ -146,7 +146,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-17.webp',
+    image: '/artworks/original-contemporary-abstract-painting-17-dipinto-astratto-contemporaneo-17-peinture-abstraite-contemporaine-17-zeitgenoessisches-abstraktes-gemaelde-17.webp',
   },
   {
     id: 18,
@@ -154,7 +154,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-18.webp',
+    image: '/artworks/unique-abstract-artwork-18-opera-arte-astratta-unica-18-oeuvre-art-abstraite-unique-18-einzigartiges-abstraktes-kunstwerk-18.webp',
   },
   {
     id: 19,
@@ -162,7 +162,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-19.webp',
+    image: '/artworks/original-abstract-painting-on-canvas-19-dipinto-astratto-su-tela-19-peinture-abstraite-sur-toile-19-abstraktes-gemaelde-auf-leinwand-19.webp',
   },
   {
     id: 20,
@@ -170,7 +170,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-20.webp',
+    image: '/artworks/contemporary-abstract-art-for-collectors-20-arte-astratta-per-collezionisti-20-art-abstrait-pour-collectionneurs-20-abstrakte-kunst-fuer-sammler-20.webp',
   },
   {
     id: 21,
@@ -178,7 +178,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-21.webp',
+    image: '/artworks/original-contemporary-abstract-painting-21-dipinto-astratto-contemporaneo-21-peinture-abstraite-contemporaine-21-zeitgenoessisches-abstraktes-gemaelde-21.webp',
   },
   {
     id: 22,
@@ -186,7 +186,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-22.webp',
+    image: '/artworks/unique-abstract-artwork-22-opera-arte-astratta-unica-22-oeuvre-art-abstraite-unique-22-einzigartiges-abstraktes-kunstwerk-22.webp',
   },
   {
     id: 23,
@@ -194,7 +194,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-23.webp',
+    image: '/artworks/original-abstract-painting-on-canvas-23-dipinto-astratto-su-tela-23-peinture-abstraite-sur-toile-23-abstraktes-gemaelde-auf-leinwand-23.webp',
   },
   {
     id: 24,
@@ -202,7 +202,7 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-24.webp',
+    image: '/artworks/contemporary-abstract-art-for-collectors-24-arte-astratta-per-collezionisti-24-art-abstrait-pour-collectionneurs-24-abstrakte-kunst-fuer-sammler-24.webp',
   },
   {
     id: 25,
@@ -210,6 +210,6 @@ export const artworks: Artwork[] = [
     year: 2024,
     medium: 'Olio su tela',
     dimensions: '84 x 62 inches',
-    image: '/artworks/ultrastruttura-opera-25.webp',
+    image: '/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp',
   },
 ]

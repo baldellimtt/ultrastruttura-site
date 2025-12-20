@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ultrastruttura.com/sitemap.xml
+

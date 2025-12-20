@@ -79,6 +79,32 @@
   width: 100%;
 }
 
+.social {
+  margin-top: 2rem;
+}
+
+.instagramLink {
+  display: inline-block;
+  color: #000000;
+  transition: opacity 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.instagramLink:hover {
+  opacity: 0.6;
+}
+
+.instagramLink:active {
+  opacity: 0.4;
+}
+
+.instagramIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .contact {
     padding: 1.5rem;

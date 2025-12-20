@@ -24,9 +24,12 @@ export default function Gallery() {
             <div key={artwork.id} className={styles.artworkItem}>
               <img
                 src={artwork.image}
-                alt={`${artwork.title} - UltraStruttura ${artwork.year || ''}`}
+                alt={`${artwork.title} - UltraStruttura ${artwork.year || ''} - Contemporary Art Painting`}
+                title={`${artwork.title} by UltraStruttura ${artwork.year || ''}`}
                 className={styles.artworkImage}
                 loading="lazy"
+                decoding="async"
+                fetchPriority={artwork.id <= 3 ? 'high' : 'low'}
               />
             </div>
           ))}
