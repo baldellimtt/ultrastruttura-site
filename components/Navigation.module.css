@@ -90,6 +90,7 @@
   font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
   font-size: 1.125rem;
   letter-spacing: 0.02em;
+  word-spacing: -0.05em;
   text-transform: none;
   font-weight: 700;
   font-style: italic;

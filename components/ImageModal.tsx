@@ -42,13 +42,6 @@ export default function ImageModal({
       })
     }
 
-    return () => {
-      document.body.style.overflow = 'unset'
-      // Ripristina anche nel cleanup per sicurezza
-      requestAnimationFrame(() => {
-        window.scrollTo(0, scrollPositionRef.current)
-      })
-    }
   }, [isOpen])
 
   useEffect(() => {
