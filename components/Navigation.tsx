@@ -95,7 +95,7 @@ export default function Navigation() {
                 alt="UltraStruttura"
                 className={styles.logo}
               />
-              <p className={styles.logoText}>ultrastruttura</p>
+              <p className={styles.logoText}>Andrea Baldelli</p>
             </div>
           </Link>
           <button 

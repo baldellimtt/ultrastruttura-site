@@ -60,11 +60,11 @@
   color: #000000;
   margin: 0;
   padding: 0;
-  transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logoLink:hover .logoText {
-  letter-spacing: 0.2em;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .menuToggle {
@@ -89,35 +89,18 @@
 .menu li a {
   font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
   font-size: 1.125rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   text-transform: none;
-  font-weight: 400;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  font-style: italic;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   padding: 0.25rem 0;
   color: #000000;
-  position: relative;
-}
-
-.menu li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #000000;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu li a:hover {
-  opacity: 0.6;
-  transform: translateX(4px);
-}
-
-.menu li a:hover::after {
-  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .menuOverlay {

@@ -23,21 +23,33 @@ export default function ImageModal({
   hasNext,
   hasPrevious,
 }: ImageModalProps) {
+  // Focus trap e keyboard navigation
+  const modalRef = useRef<HTMLDivElement>(null)
+  const previousActiveElementRef = useRef<HTMLElement | null>(null)
+  const scrollPositionRef = useRef<number>(0)
+
   useEffect(() => {
     if (isOpen) {
+      // Salva la posizione di scroll corrente prima di bloccare lo scroll
+      scrollPositionRef.current = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
       document.body.style.overflow = 'hidden'
     } else {
+      // Ripristina lo scroll e poi ripristina la posizione
       document.body.style.overflow = 'unset'
+      // Usa requestAnimationFrame per assicurarsi che il DOM sia aggiornato
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollPositionRef.current)
+      })
     }
 
     return () => {
       document.body.style.overflow = 'unset'
+      // Ripristina anche nel cleanup per sicurezza
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollPositionRef.current)
+      })
     }
   }, [isOpen])
-
-  // Focus trap e keyboard navigation
-  const modalRef = useRef<HTMLDivElement>(null)
-  const previousActiveElementRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
