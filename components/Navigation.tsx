@@ -86,7 +86,6 @@ export default function Navigation() {
       <nav 
         ref={navRef}
         className={`${styles.nav} ${isMenuOpen ? styles.navMenuOpen : ''}`}
-        style={{ '--nav-height': `${navHeight}px` } as React.CSSProperties}
       >
         <div className={styles.navContainer}>
           <Link href="/" className={styles.logoLink} onClick={handleMenuLinkClick}>
