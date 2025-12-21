@@ -46,7 +46,8 @@
     margin-left: 0;
     margin-top: 0;
     width: 100%;
-    padding-top: 60px;
+    /* Usa la variabile CSS calcolata dinamicamente dal nav */
+    padding-top: var(--nav-height, 60px);
     /* Migliora performance scroll su mobile */
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
@@ -57,7 +58,8 @@
 
 @media (max-width: 480px) {
   .main {
-    padding-top: 60px;
+    /* Usa la variabile CSS calcolata dinamicamente dal nav */
+    padding-top: var(--nav-height, 56px);
   }
 }
 

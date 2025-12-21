@@ -142,7 +142,7 @@
 @media (max-width: 768px) {
   .contact {
     padding: 1.5rem 1rem;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - var(--nav-height, 60px));
   }
 
   .contactContainer {
@@ -163,7 +163,7 @@
 @media (max-width: 480px) {
   .contact {
     padding: 1rem 0.75rem;
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh - var(--nav-height, 56px));
   }
 
   .contactContainer {

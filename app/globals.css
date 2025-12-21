@@ -9,6 +9,14 @@ html {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Inizializza la variabile CSS per l'altezza del nav (fallback) */
+  --nav-height: 60px;
+}
+
+@media (max-width: 480px) {
+  html {
+    --nav-height: 56px;
+  }
 }
 
 /* Skip to main content link per accessibility */

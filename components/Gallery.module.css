@@ -162,8 +162,9 @@
 
 @media (max-width: 768px) {
   .gallery {
-    padding: 1rem 0.75rem;
-    min-height: calc(100vh - 60px);
+    /* Padding verticale simmetrico: stesso valore per top e bottom */
+    padding: 1.5rem 0.75rem;
+    min-height: calc(100vh - var(--nav-height, 60px));
     /* Migliora performance su mobile */
     -webkit-overflow-scrolling: touch;
     will-change: scroll-position;
@@ -177,8 +178,8 @@
   .collage {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    /* Nessun padding verticale - gestito completamente da .gallery per simmetria */
+    padding: 0;
     /* Ottimizzazione rendering mobile */
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
@@ -193,15 +194,17 @@
 
 @media (max-width: 480px) {
   .gallery {
-    /* Padding simmetrico: stesso valore per top e bottom */
+    /* Padding verticale simmetrico: stesso valore per top e bottom */
+    /* Il padding-top del .main gestisce lo spazio per il nav */
+    /* Qui gestiamo solo lo spazio interno simmetrico */
     padding: 1.5rem 0.5rem;
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh - var(--nav-height, 56px));
   }
 
   .collage {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    /* Padding verticale simmetrico - stesso valore per top e bottom */
+    /* Nessun padding verticale - gestito completamente da .gallery */
     padding: 0;
   }
 
@@ -213,13 +216,14 @@
 
 @media (max-width: 360px) {
   .gallery {
-    /* Padding simmetrico: stesso valore per top e bottom */
+    /* Padding verticale simmetrico: stesso valore per top e bottom */
     padding: 1.5rem 0.5rem;
+    min-height: calc(100vh - var(--nav-height, 56px));
   }
 
   .collage {
     gap: 1rem;
-    /* Padding verticale simmetrico - stesso valore per top e bottom */
+    /* Nessun padding verticale - gestito completamente da .gallery */
     padding: 0;
   }
 }
