@@ -42,7 +42,16 @@ npm install
 npm run dev
 ```
 
-5. Apri [http://localhost:3000](http://localhost:3000)
+5. Configura Formspree per il form di contatto:
+   - Vai su https://formspree.io e crea un account gratuito
+   - Crea un nuovo form e ottieni l'ID (es. `xvgkqyzw`)
+   - Crea un file `.env.local` nella root del progetto:
+     ```
+     NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id_here
+     ```
+   - Per GitHub Pages, aggiungi `NEXT_PUBLIC_FORMSPREE_ID` come secret nelle impostazioni del repository GitHub (Settings > Secrets and variables > Actions)
+
+6. Apri [http://localhost:3000](http://localhost:3000)
 
 ## Personalizzazione
 

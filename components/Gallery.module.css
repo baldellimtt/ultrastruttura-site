@@ -193,15 +193,16 @@
 
 @media (max-width: 480px) {
   .gallery {
-    padding: 0 0.5rem 0.75rem 0.5rem;
+    /* Padding simmetrico: stesso valore per top e bottom */
+    padding: 1.5rem 0.5rem;
     min-height: calc(100vh - 56px);
   }
 
   .collage {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    /* Padding verticale simmetrico - stesso valore per top e bottom */
+    padding: 0;
   }
 
   .artworkItem {
@@ -212,11 +213,14 @@
 
 @media (max-width: 360px) {
   .gallery {
-    padding: 0.5rem;
+    /* Padding simmetrico: stesso valore per top e bottom */
+    padding: 1.5rem 0.5rem;
   }
 
   .collage {
     gap: 1rem;
+    /* Padding verticale simmetrico - stesso valore per top e bottom */
+    padding: 0;
   }
 }
 
