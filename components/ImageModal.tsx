@@ -180,7 +180,7 @@ export default function ImageModal({
         <div className={styles.imageContainer}>
           <img
             src={artwork.image}
-            alt={`${artwork.title} (${artwork.year || ''}) - UltraStruttura - Contemporary Abstract Painting`}
+            alt={`${artwork.title} (${artwork.year || ''}) - Original Contemporary Abstract Painting by UltraStruttura | ${artwork.medium || 'Oil on canvas'} | ${artwork.dimensions || ''}`}
             className={styles.modalImage}
             loading="eager"
             fetchPriority="high"

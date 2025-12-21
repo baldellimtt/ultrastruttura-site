@@ -3,10 +3,11 @@ import './globals.css'
 import StructuredData from '@/components/StructuredData'
 import ScrollProgress from '@/components/ScrollProgress'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import GoogleSearchConsole from '@/components/GoogleSearchConsole'
 
 export const metadata: Metadata = {
-  title: 'ultrastruttura - Contemporary Abstract Paintings | Unique Abstract Artwork',
-  description: 'Contemporary abstract paintings by UltraStruttura. Unique abstract artwork, original abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei, opere d\'arte astratte uniche, arte astratta contemporanea per collezionisti. Peintures abstraites contemporaines, œuvres d\'art abstraites uniques. Zeitgenössisches abstraktes Gemälde, einzigartiges abstraktes Kunstwerk.',
+  title: 'UltraStruttura | Contemporary Abstract Paintings & Art',
+  description: 'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors. Explore our exclusive collection of modern abstract art.',
   keywords: [
     'ultrastruttura',
     'original contemporary abstract painting',
@@ -57,8 +58,8 @@ export const metadata: Metadata = {
     apple: '/favicon.webp',
   },
   openGraph: {
-    title: 'ultrastruttura - Contemporary Abstract Paintings',
-    description: 'Contemporary abstract paintings by UltraStruttura. Unique abstract artwork, abstract painting on canvas, contemporary abstract art for collectors. Dipinti astratti contemporanei, opere d\'arte astratte uniche.',
+    title: 'UltraStruttura | Contemporary Abstract Paintings & Art',
+    description: 'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors. Explore our exclusive collection of modern abstract art.',
     type: 'website',
     locale: 'it_IT',
     alternateLocale: ['en_US', 'de_DE', 'fr_FR', 'ja_JP'],
@@ -75,13 +76,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ultrastruttura - Contemporary Abstract Paintings',
-    description: 'Contemporary abstract paintings, unique abstract artwork, contemporary abstract art for collectors',
+    title: 'UltraStruttura | Contemporary Abstract Paintings & Art',
+    description: 'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors.',
     creator: '@ultrastruttura',
     images: ['https://ultrastruttura.com/logo.webp'],
   },
   other: {
     'instagram:creator': '@ultrastruttura',
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION && {
+      'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION,
+    }),
   },
   alternates: {
     canonical: 'https://ultrastruttura.com',
@@ -104,6 +108,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <head>
+        <GoogleSearchConsole />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <link rel="canonical" href="https://ultrastruttura.com" />
         <meta name="theme-color" content="#ffffff" />

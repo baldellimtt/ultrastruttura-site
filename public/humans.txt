@@ -1,0 +1,18 @@
+/* TEAM */
+Artist: UltraStruttura
+Contact: andrea.baldelli@icloud.com
+Location: Bergamo, Italy
+From: Italy
+
+/* SITE */
+Last update: 2025/01/XX
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Next.js 14, React, TypeScript
+Software: Visual Studio Code
+
+/* SOCIAL */
+Instagram: @ultrastruttura
+Website: https://ultrastruttura.com
+
+
+

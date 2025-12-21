@@ -191,8 +191,8 @@ export default function Gallery() {
                         imageRefs.current[index] = el
                       }}
                       src={artwork.image}
-                      alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
-                      title={`${artwork.title} (${artwork.year}) by UltraStruttura`}
+                      alt={`${artwork.title} (${artwork.year}) - Original Contemporary Abstract Painting by UltraStruttura | ${artwork.medium || 'Oil on canvas'} | ${artwork.dimensions || ''}`}
+                      title={`${artwork.title} (${artwork.year}) by UltraStruttura - Contemporary Abstract Art`}
                       className={`${styles.artworkImage} ${isLoaded ? styles.artworkImageLoaded : styles.artworkImageLoading}`}
                       loading={isCritical ? 'eager' : 'lazy'}
                       decoding={isCritical ? 'sync' : 'async'}

@@ -1,8 +1,33 @@
+import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
 import Navigation from '@/components/Navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import styles from './page.module.css'
 import layoutStyles from '../page.module.css'
+
+export const metadata: Metadata = {
+  title: 'Contact - ultrastruttura | Contemporary Abstract Artist',
+  description: 'Contact UltraStruttura - Contemporary abstract artist from Bergamo, Italy. Get in touch for inquiries about original abstract paintings, artwork commissions, and exhibitions. Contatta UltraStruttura - Artista astratto contemporaneo di Bergamo, Italia.',
+  keywords: [
+    'contact ultrastruttura',
+    'contemporary artist contact',
+    'abstract art contact',
+    'art commission',
+    'contatta artista',
+    'artista contemporaneo contatto',
+    'arte astratta contatto',
+    'commissione artistica',
+  ].join(', '),
+  openGraph: {
+    title: 'Contact - ultrastruttura | Contemporary Abstract Artist',
+    description: 'Contact UltraStruttura - Contemporary abstract artist from Bergamo, Italy. Get in touch for inquiries about original abstract paintings and artwork commissions.',
+    type: 'website',
+    url: 'https://ultrastruttura.com/contact',
+  },
+  alternates: {
+    canonical: 'https://ultrastruttura.com/contact',
+  },
+}
 
 export default function Contact() {
   return (
