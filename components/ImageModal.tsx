@@ -33,15 +33,24 @@ export default function ImageModal({
       // Salva la posizione di scroll corrente prima di bloccare lo scroll
       scrollPositionRef.current = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
       document.body.style.overflow = 'hidden'
+      // Previeni scroll mantenendo la posizione con position fixed
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollPositionRef.current}px`
+      document.body.style.width = '100%'
     } else {
-      // Ripristina lo scroll e poi ripristina la posizione
+      // Ripristina gli stili del body
       document.body.style.overflow = 'unset'
-      // Usa requestAnimationFrame per assicurarsi che il DOM sia aggiornato
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      // Ripristina la posizione di scroll dopo che gli stili sono stati rimossi
+      // Usa doppio requestAnimationFrame per assicurarsi che il DOM sia completamente aggiornato
       requestAnimationFrame(() => {
-        window.scrollTo(0, scrollPositionRef.current)
+        requestAnimationFrame(() => {
+          window.scrollTo(0, scrollPositionRef.current)
+        })
       })
     }
-
   }, [isOpen])
 
   useEffect(() => {

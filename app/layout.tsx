@@ -96,7 +96,15 @@ export const metadata: Metadata = {
       'fr': 'https://ultrastruttura.com',
       'ja': 'https://ultrastruttura.com',
     },
+    types: {
+      'application/rss+xml': [{ url: 'https://ultrastruttura.com', title: 'UltraStruttura Artworks' }],
+    },
   },
+  category: 'Art',
+  classification: 'Contemporary Abstract Art',
+  referrer: 'origin-when-cross-origin',
+  applicationName: 'UltraStruttura',
+  generator: 'Next.js',
   metadataBase: new URL('https://ultrastruttura.com'),
 }
 

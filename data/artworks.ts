@@ -9,6 +9,7 @@ export interface Artwork {
   dimensions?: string
   location?: string
   image: string
+  available?: boolean // true = disponibile, false = venduto, undefined = disponibile (default)
 }
 
 export const artworks: Artwork[] = [
