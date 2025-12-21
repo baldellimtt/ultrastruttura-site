@@ -15,7 +15,8 @@ export default function Breadcrumbs() {
   const segments = pathname.split('/').filter(Boolean)
   const breadcrumbs = segments.map((segment, index) => {
     const href = '/' + segments.slice(0, index + 1).join('/')
-    const label = segment.charAt(0).toUpperCase() + segment.slice(1)
+    // Mantieni il testo minuscolo per i segmenti
+    const label = segment.toLowerCase()
     return { href, label }
   })
 
@@ -29,7 +30,7 @@ export default function Breadcrumbs() {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Home',
+        name: 'ultrastruttura',
         item: baseUrl,
       },
       ...breadcrumbs.map((crumb, index) => ({
@@ -51,7 +52,7 @@ export default function Breadcrumbs() {
         <ol className={styles.breadcrumbList}>
           <li className={styles.breadcrumbItem}>
             <Link href="/" className={styles.breadcrumbLink}>
-              Home
+              ultrastruttura
             </Link>
           </li>
           {breadcrumbs.map((crumb, index) => (
@@ -75,4 +76,5 @@ export default function Breadcrumbs() {
     </>
   )
 }
+
 
