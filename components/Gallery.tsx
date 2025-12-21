@@ -56,8 +56,26 @@ export default function Gallery() {
     })
   }
 
-  // Verifica se le immagini sono già caricate (cache del browser)
+  // Verifica se le immagini sono già caricate (cache del browser) e preloada le prime
   useEffect(() => {
+    // Preloada le prime 3 immagini critiche (above the fold) solo se non già presenti
+    const criticalImages = artworks.slice(0, 3)
+    const preloadLinks: HTMLLinkElement[] = []
+    
+    criticalImages.forEach((artwork) => {
+      // Verifica se il link di preload esiste già
+      const existingLink = document.querySelector(`link[href="${artwork.image}"][rel="preload"]`)
+      if (!existingLink) {
+        const link = document.createElement('link')
+        link.rel = 'preload'
+        link.as = 'image'
+        link.href = artwork.image
+        link.setAttribute('fetchpriority', 'high')
+        document.head.appendChild(link)
+        preloadLinks.push(link)
+      }
+    })
+
     const checkCachedImages = () => {
       imageRefs.current.forEach((img, index) => {
         if (img && artworks[index]) {
@@ -76,13 +94,25 @@ export default function Gallery() {
       })
     }
     
-    // Controlla immediatamente
+    // Controlla immediatamente per immagini in cache
     checkCachedImages()
     
-    // Controlla anche dopo un breve delay per gestire immagini che si caricano molto velocemente
+    // Controlla anche dopo brevi delay per gestire immagini che si caricano molto velocemente
+    // Prima check veloce per immagini critiche
+    const fastTimeoutId = setTimeout(checkCachedImages, 10)
+    // Secondo check per immagini che si caricano subito dopo
     const timeoutId = setTimeout(checkCachedImages, 100)
     
-    return () => clearTimeout(timeoutId)
+    return () => {
+      clearTimeout(fastTimeoutId)
+      clearTimeout(timeoutId)
+      // Rimuovi solo i link di preload che abbiamo creato
+      preloadLinks.forEach((link) => {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link)
+        }
+      })
+    }
   }, [])
 
   const handleKeyDown = (
@@ -133,6 +163,10 @@ export default function Gallery() {
           <div className={styles.collage}>
             {artworks.map((artwork, index) => {
               const isLoaded = loadedImages.has(artwork.id)
+              const isCritical = index < 3 // Prime 3 immagini critiche
+              // Mostra skeleton solo se l'immagine non è ancora caricata
+              const showSkeleton = !isLoaded
+              
               return (
                 <div
                   key={artwork.id}
@@ -147,7 +181,7 @@ export default function Gallery() {
                   aria-label={`View ${artwork.title} (${artwork.year})`}
                 >
                   <div className={styles.imageWrapper}>
-                    {!isLoaded && (
+                    {showSkeleton && (
                       <div className={styles.skeletonContainer}>
                         <ImageSkeleton />
                       </div>
@@ -160,9 +194,9 @@ export default function Gallery() {
                       alt={`${artwork.title} (${artwork.year}) - UltraStruttura - Contemporary Abstract Painting`}
                       title={`${artwork.title} (${artwork.year}) by UltraStruttura`}
                       className={`${styles.artworkImage} ${isLoaded ? styles.artworkImageLoaded : styles.artworkImageLoading}`}
-                      loading={index < 3 ? 'eager' : 'lazy'}
-                      decoding="async"
-                      fetchPriority={index < 3 ? 'high' : 'low'}
+                      loading={isCritical ? 'eager' : 'lazy'}
+                      decoding={isCritical ? 'sync' : 'async'}
+                      fetchPriority={isCritical ? 'high' : 'low'}
                       width="800"
                       height="600"
                       onLoad={() => handleImageLoad(artwork.id)}

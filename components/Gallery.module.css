@@ -37,6 +37,15 @@
   line-height: 0;
   font-size: 0;
   outline: none;
+  /* Ottimizzazione rendering per le prime immagini */
+  content-visibility: auto;
+  contain-intrinsic-size: 400px 300px;
+}
+
+/* Prime 3 immagini (critiche) - rendering immediato */
+.artworkItem:nth-child(-n+3) {
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
 }
 
 .artworkItem:focus-visible {
@@ -118,6 +127,11 @@
   opacity: 1;
   position: relative;
   z-index: 2;
+}
+
+/* Prime immagini critiche - rendering prioritario */
+.artworkItem:nth-child(-n+3) .artworkImage {
+  content-visibility: visible;
 }
 
 .artworkItem:hover .artworkImage {

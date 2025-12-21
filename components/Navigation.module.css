@@ -221,8 +221,8 @@
 
   .menu {
     position: fixed;
-    /* Usa la variabile CSS calcolata dinamicamente, con fallback a 60px */
-    top: var(--nav-height, 60px);
+    /* top e maxHeight vengono impostati dinamicamente via JavaScript */
+    top: 60px; /* Fallback */
     left: 0;
     right: 0;
     background-color: #ffffff;
@@ -233,9 +233,8 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                top 0.1s ease;
-    max-height: calc(100vh - var(--nav-height, 60px));
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: calc(100vh - 60px); /* Fallback */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 1000;
@@ -266,9 +265,9 @@
   }
 
   .menu {
-    /* Assicura che su schermi piccoli il menu parta sempre dopo il nav */
-    top: var(--nav-height, 56px);
-    max-height: calc(100vh - var(--nav-height, 56px));
+    /* top e maxHeight vengono impostati dinamicamente via JavaScript */
+    top: 56px; /* Fallback per schermi piccoli */
+    max-height: calc(100vh - 56px); /* Fallback */
   }
 
   .logoLink {

@@ -12,32 +12,46 @@ const menuItems = [
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
-  const [navHeight, setNavHeight] = useState(60) // Default fallback
+  const menuRef = useRef<HTMLUListElement>(null)
+  const [menuTop, setMenuTop] = useState('60px') // Default fallback
 
   // Calcola l'altezza reale del nav per posizionare il menu correttamente
   useEffect(() => {
-    const updateNavHeight = () => {
+    const updateMenuPosition = () => {
       if (navRef.current) {
-        const height = navRef.current.offsetHeight
-        setNavHeight(height)
-        // Imposta variabile CSS per uso nel CSS
+        // Usa getBoundingClientRect per ottenere l'altezza precisa inclusi padding e border
+        const navRect = navRef.current.getBoundingClientRect()
+        const height = navRect.height
+        setMenuTop(`${height}px`)
+        
+        // Aggiorna anche la variabile CSS come fallback
         document.documentElement.style.setProperty('--nav-height', `${height}px`)
+        
+        // Applica direttamente lo stile al menu se esiste
+        // Gli inline styles hanno priorità più alta del CSS, quindi sovrascrivono le media queries
+        if (menuRef.current) {
+          menuRef.current.style.top = `${height}px`
+          menuRef.current.style.maxHeight = `calc(100vh - ${height}px)`
+        }
       }
     }
 
-    updateNavHeight()
+    updateMenuPosition()
 
     // Aggiorna quando la finestra viene ridimensionata o quando il menu si apre/chiude
-    window.addEventListener('resize', updateNavHeight)
+    window.addEventListener('resize', updateMenuPosition)
     
     // Usa ResizeObserver per rilevare cambiamenti nell'altezza del nav
-    const resizeObserver = new ResizeObserver(updateNavHeight)
+    const resizeObserver = new ResizeObserver(() => {
+      // Usa requestAnimationFrame per assicurarsi che il DOM sia aggiornato
+      requestAnimationFrame(updateMenuPosition)
+    })
     if (navRef.current) {
       resizeObserver.observe(navRef.current)
     }
 
     return () => {
-      window.removeEventListener('resize', updateNavHeight)
+      window.removeEventListener('resize', updateMenuPosition)
       resizeObserver.disconnect()
     }
   }, [isMenuOpen]) // Ricontrolla quando il menu si apre/chiude
@@ -94,7 +108,14 @@ export default function Navigation() {
           >
             <span className={styles.menuIcon}>{isMenuOpen ? 'Close' : 'Menu'}</span>
           </button>
-          <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}>
+          <ul 
+            ref={menuRef}
+            className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ''}`}
+            style={{ 
+              top: menuTop,
+              maxHeight: `calc(100vh - ${menuTop})`
+            }}
+          >
             {menuItems.map((item) => (
               <li key={item}>
                 <Link 
