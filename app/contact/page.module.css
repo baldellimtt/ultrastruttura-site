@@ -152,6 +152,7 @@
 
   .name {
     font-size: 1.75rem;
+    margin-top: 1rem;
   }
 
   .info {
@@ -171,6 +172,7 @@
 
   .name {
     font-size: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .location {

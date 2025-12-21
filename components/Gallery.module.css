@@ -193,7 +193,7 @@
 
 @media (max-width: 480px) {
   .gallery {
-    padding: 0.75rem 0.5rem;
+    padding: 0 0.5rem 0.75rem 0.5rem;
     min-height: calc(100vh - 56px);
   }
 
