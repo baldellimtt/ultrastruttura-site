@@ -155,7 +155,9 @@
 
 @media (max-width: 1024px) {
   .gallery {
-    padding: 1.5rem;
+    /* Solo padding orizzontale per avere spazio grigio sopra/sotto
+       uguale allo spazio tra le immagini (gestito da .collage) */
+    padding: 0 1.5rem;
   }
 
   .collage {
@@ -168,8 +170,9 @@
 
 @media (max-width: 768px) {
   .gallery {
-    /* Padding verticale simmetrico: stesso valore per top e bottom */
-    padding: 1.5rem 0.75rem;
+    /* Niente padding verticale: lo spazio grigio sopra/sotto
+       è gestito solo da .collage per restare uguale al gap */
+    padding: 0 0.75rem;
     min-height: calc(100vh - var(--nav-height, 60px));
     /* Migliora performance su mobile */
     -webkit-overflow-scrolling: touch;
@@ -184,8 +187,9 @@
   .collage {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.75rem;
-    /* Nessun padding verticale - gestito completamente da .gallery per simmetria */
-    padding: 0;
+    /* Padding verticale uguale al gap per avere la stessa distanza
+       sopra la prima riga, tra le righe e sotto l'ultima riga */
+    padding: 0.75rem 0;
     /* Ottimizzazione rendering mobile */
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
@@ -200,18 +204,16 @@
 
 @media (max-width: 480px) {
   .gallery {
-    /* Padding verticale simmetrico: stesso valore per top e bottom */
-    /* Il padding-top del .main gestisce lo spazio per il nav */
-    /* Qui gestiamo solo lo spazio interno simmetrico */
-    padding: 1.5rem 0.5rem;
+    /* Solo padding orizzontale, niente verticale */
+    padding: 0 0.5rem;
     min-height: calc(100vh - var(--nav-height, 56px));
   }
 
   .collage {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    /* Nessun padding verticale - gestito completamente da .gallery */
-    padding: 0;
+    /* Padding verticale uguale al gap */
+    padding: 1.5rem 0;
   }
 
   .artworkItem {
@@ -222,15 +224,15 @@
 
 @media (max-width: 360px) {
   .gallery {
-    /* Padding verticale simmetrico: stesso valore per top e bottom */
-    padding: 1.5rem 0.5rem;
+    /* Solo padding orizzontale, niente verticale */
+    padding: 0 0.5rem;
     min-height: calc(100vh - var(--nav-height, 56px));
   }
 
   .collage {
     gap: 1rem;
-    /* Nessun padding verticale - gestito completamente da .gallery */
-    padding: 0;
+    /* Padding verticale uguale al gap */
+    padding: 1rem 0;
   }
 }
 

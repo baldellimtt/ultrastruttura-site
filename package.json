@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:open": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
-    "deploy": "next build && echo 'Build completato! Ora puoi fare push della cartella out/ su GitHub Pages'"
+    "deploy": "next build && echo 'Build completato! Ora puoi fare push della cartella out/ su GitHub Pages'",
+    "test": "npm run dev",
+    "preview": "npm run build && npx serve out"
   },
   "dependencies": {
     "next": "^15.1.0",
