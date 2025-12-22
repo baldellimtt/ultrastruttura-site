@@ -48,6 +48,10 @@
 .artworkItem:nth-child(-n+3) {
   content-visibility: visible;
   contain-intrinsic-size: auto;
+  /* Evita che le prime immagini partano traslate verso il basso,
+     così lo spazio grigio superiore è identico al resto della griglia */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .artworkItem:focus-visible {
