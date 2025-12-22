@@ -1,5 +1,7 @@
 .gallery {
-  padding: 2rem;
+  /* Nessun padding verticale, così lo spazio grigio sopra/sotto
+     è identico allo spazio tra le immagini (gestito da .collage) */
+  padding: 0 2rem;
   min-height: calc(100vh - 100px);
   width: 100%;
   background-color: #dddddd;
