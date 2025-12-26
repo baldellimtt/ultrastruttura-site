@@ -26,11 +26,8 @@ export default function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      // Usa Formspree per GitHub Pages (servizio esterno gratuito)
-      // Sostituisci 'YOUR_FORMSPREE_ID' con il tuo ID da formspree.io
-      const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ID 
-        ? `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`
-        : '/api/contact' // Fallback per sviluppo locale
+      // Endpoint Formspree configurato
+      const formspreeEndpoint = 'https://formspree.io/f/mbdjlgap'
 
       const response = await fetch(formspreeEndpoint, {
         method: 'POST',
@@ -42,7 +39,7 @@ export default function ContactForm() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _replyto: formData.email, // Per Formspree
+          _replyto: formData.email, // Per Formspree - email di risposta
         }),
       })
 
