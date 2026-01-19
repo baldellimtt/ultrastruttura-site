@@ -11,7 +11,9 @@
     "export": "next build",
     "deploy": "next build && echo 'Build completato! Ora puoi fare push della cartella out/ su GitHub Pages'",
     "test": "npm run dev",
-    "preview": "npm run build && npx serve out"
+    "preview": "npm run build && npx serve out",
+    "preview:open": "powershell -ExecutionPolicy Bypass -File ./preview-open.ps1",
+    "serve": "npx serve out"
   },
   "dependencies": {
     "next": "^15.1.0",
