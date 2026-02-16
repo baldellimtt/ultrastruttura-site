@@ -204,6 +204,7 @@ export default function ImageModal({
           <h2 id="artwork-title" className={styles.artworkTitle}>
             {artwork.title} ({artwork.year})
           </h2>
+          {artwork.info && <p className={styles.artworkSubtitle}>{artwork.info}</p>}
         </div>
       </div>
     </div>

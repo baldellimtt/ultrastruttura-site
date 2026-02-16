@@ -145,6 +145,16 @@
   color: #ffffff;
 }
 
+.artworkSubtitle {
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin: 0.4rem 0 0;
+  color: #ffffff;
+  opacity: 0.92;
+}
+
 @media (max-width: 768px) {
   .modalOverlay {
     padding: 1rem;
@@ -204,6 +214,10 @@
     font-size: 1.25rem;
   }
 
+  .artworkSubtitle {
+    font-size: 1rem;
+  }
+
   .artworkInfo {
     padding: 0 1rem;
   }
@@ -234,6 +248,10 @@
 
   .artworkTitle {
     font-size: 1rem;
+  }
+
+  .artworkSubtitle {
+    font-size: 0.9rem;
   }
 }
 

@@ -44,6 +44,7 @@ collections:
             fields:
               - { label: ID, name: id, widget: number, value_type: int, min: 1 }
               - { label: Title, name: title, widget: string }
+              - { label: Extra Info (under title), name: info, widget: string, required: false }
               - { label: Year, name: year, widget: number, value_type: int, min: 1900, max: 2100 }
               - { label: Medium, name: medium, widget: string, required: false }
               - { label: Dimensions, name: dimensions, widget: string, required: false }

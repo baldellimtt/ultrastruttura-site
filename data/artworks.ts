@@ -3,6 +3,7 @@ import siteContentData from './site-content.json'
 export interface Artwork {
   id: number
   title: string
+  info?: string
   year: number
   medium?: string
   dimensions?: string
@@ -64,6 +65,7 @@ export const artworks: Artwork[] = rawArtworks
     items.push({
       id: typeof artwork.id === 'number' ? artwork.id : index + 1,
       title: typeof artwork.title === 'string' ? artwork.title : `Opera ${index + 1}`,
+      info: typeof artwork.info === 'string' ? artwork.info : undefined,
       year: typeof artwork.year === 'number' ? artwork.year : new Date().getFullYear(),
       medium: typeof artwork.medium === 'string' ? artwork.medium : undefined,
       dimensions: typeof artwork.dimensions === 'string' ? artwork.dimensions : undefined,
