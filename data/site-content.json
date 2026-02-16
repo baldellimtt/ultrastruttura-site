@@ -12,20 +12,20 @@
   },
   "artworks": [
     {
-      "id": 25,
-      "title": "Opera Prima",
-      "year": 2025,
-      "medium": "Olio su tela",
-      "dimensions": "84 x 62 inches",
-      "image": "/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp"
-    },
-    {
       "id": 2,
       "title": "Opera 2",
       "year": 2025,
       "medium": "Olio su tela",
       "dimensions": "84 x 62 inches",
       "image": "/artworks/unique-abstract-artwork-02-opera-arte-astratta-unica-02-oeuvre-art-abstraite-unique-02-einzigartiges-abstraktes-kunstwerk-02.webp"
+    },
+    {
+      "id": 25,
+      "title": "Opera Prima",
+      "year": 2025,
+      "medium": "Olio su tela",
+      "dimensions": "84 x 62 inches",
+      "image": "/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp"
     },
     {
       "id": 3,
