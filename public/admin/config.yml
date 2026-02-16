@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: baldellimtt/ultrastruttura-site
+  branch: master
+  base_url: https://ultrastruttura-decap-oauth.ultrastruttura-cms.workers.dev
+  auth_endpoint: /auth
+
+local_backend: true
+publish_mode: simple
+
+media_folder: public/artworks
+public_folder: /artworks
+
+collections:
+  - name: site_content
+    label: Site Content
+    files:
+      - name: content
+        label: Home Content
+        file: data/site-content.json
+        format: json
+        fields:
+          - label: Site
+            name: site
+            widget: object
+            fields:
+              - { label: Brand Name, name: brandName, widget: string }
+              - { label: Artist Name, name: artistName, widget: string }
+              - { label: Navigation Label, name: artistLabel, widget: string }
+              - { label: SEO Title, name: seoTitle, widget: string }
+              - { label: SEO Description, name: seoDescription, widget: text }
+          - label: Social
+            name: social
+            widget: object
+            fields:
+              - { label: Instagram URL, name: instagram, widget: string }
+              - { label: Twitter Handle, name: twitterHandle, widget: string, required: false }
+          - label: Artworks
+            name: artworks
+            widget: list
+            summary: "{{fields.title}} ({{fields.year}})"
+            allow_add: true
+            collapsed: true
+            fields:
+              - { label: ID, name: id, widget: number, value_type: int, min: 1 }
+              - { label: Title, name: title, widget: string }
+              - { label: Year, name: year, widget: number, value_type: int, min: 1900, max: 2100 }
+              - { label: Medium, name: medium, widget: string, required: false }
+              - { label: Dimensions, name: dimensions, widget: string, required: false }
+              - { label: Location, name: location, widget: string, required: false }
+              - { label: Image, name: image, widget: image }
+              - { label: Available, name: available, widget: boolean, required: false, default: true }

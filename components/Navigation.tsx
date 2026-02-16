@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import styles from './Navigation.module.css'
+import { siteSettings } from '@/data/artworks'
 
 const menuItems = [
   'Paintings',
@@ -92,10 +93,10 @@ export default function Navigation() {
             <div className={styles.logoContainer}>
               <img
                 src="/logo.webp"
-                alt="UltraStruttura"
+                alt={siteSettings.brandName}
                 className={styles.logo}
               />
-              <p className={styles.logoText}>Andrea Baldelli</p>
+              <p className={styles.logoText}>{siteSettings.artistLabel}</p>
             </div>
           </Link>
           <button 

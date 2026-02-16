@@ -4,10 +4,11 @@ import StructuredData from '@/components/StructuredData'
 import ScrollProgress from '@/components/ScrollProgress'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import GoogleSearchConsole from '@/components/GoogleSearchConsole'
+import { siteSettings, socialLinks } from '@/data/artworks'
 
 export const metadata: Metadata = {
-  title: 'UltraStruttura | Contemporary Abstract Paintings & Art',
-  description: 'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors. Explore our exclusive collection of modern abstract art.',
+  title: siteSettings.seoTitle,
+  description: siteSettings.seoDescription,
   keywords: [
     'ultrastruttura',
     'original contemporary abstract painting',
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
     'Italian artist',
     'artista italiano',
   ].join(', '),
-  authors: [{ name: 'UltraStruttura' }],
-  creator: 'UltraStruttura',
-  publisher: 'UltraStruttura',
+  authors: [{ name: siteSettings.artistName }],
+  creator: siteSettings.brandName,
+  publisher: siteSettings.brandName,
   robots: {
     index: true,
     follow: true,
@@ -58,8 +59,8 @@ export const metadata: Metadata = {
     apple: '/favicon.webp',
   },
   openGraph: {
-    title: 'UltraStruttura | Contemporary Abstract Paintings & Art',
-    description: 'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors. Explore our exclusive collection of modern abstract art.',
+    title: siteSettings.seoTitle,
+    description: siteSettings.seoDescription,
     type: 'website',
     locale: 'it_IT',
     alternateLocale: ['en_US', 'de_DE', 'fr_FR', 'ja_JP'],
@@ -76,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'UltraStruttura | Contemporary Abstract Paintings & Art',
-    description: 'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors.',
-    creator: '@ultrastruttura',
+    title: siteSettings.seoTitle,
+    description: siteSettings.seoDescription,
+    creator: socialLinks.twitterHandle,
     images: ['https://ultrastruttura.com/logo.webp'],
   },
   other: {

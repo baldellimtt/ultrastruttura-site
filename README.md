@@ -1,67 +1,74 @@
 # UltraStruttura - Sito Web Artista
 
-Sito web minimale e moderno per artista professionista, ispirato al design di lilystockman.com.
+Sito Next.js statico (deploy su GitHub Pages) con contenuti gestibili via Decap CMS.
 
-## Tecnologie
+## Stack
 
-- **Next.js 14** - Framework React con App Router
-- **TypeScript** - Type safety
-- **CSS Modules** - Styling modulare
+- Next.js 15 (App Router)
+- TypeScript
+- CSS Modules
+- Decap CMS (`/admin`)
 
-## Struttura
+## Dove si modificano i contenuti
 
-```
-├── app/
-│   ├── layout.tsx       # Layout principale
-│   ├── page.tsx         # Pagina home
-│   └── globals.css      # Stili globali
-├── components/
-│   ├── Navigation.tsx   # Menu di navigazione
-│   ├── Header.tsx       # Header con titolo/logo
-│   └── Gallery.tsx      # Galleria opere
-└── public/
-    ├── artworks/        # Cartella per le immagini dei quadri
-    └── logo.png         # Logo (da aggiungere)
-```
+Tutti i contenuti principali sono in `data/site-content.json`:
 
-## Setup
+- titolo e dati brand/artista
+- SEO title e description
+- lista opere (ordine, titolo, anno, medium, dimensioni, disponibilita, immagine)
 
-1. Installa le dipendenze:
+Le immagini opere vanno in `public/artworks`.
+
+## Setup locale
+
+1. Installa dipendenze:
+
 ```bash
-npm install
+npm ci
 ```
 
-2. Aggiungi le immagini:
-   - Metti il logo in `public/logo.png`
-   - Metti le immagini dei quadri in `public/artworks/`
+2. Avvia il sito:
 
-3. Aggiorna i dati delle opere in `components/Gallery.tsx`
-
-4. Avvia il server di sviluppo:
 ```bash
 npm run dev
 ```
 
-5. Configura Formspree per il form di contatto:
-   - Vai su https://formspree.io e crea un account gratuito
-   - Crea un nuovo form e ottieni l'ID (es. `xvgkqyzw`)
-   - Crea un file `.env.local` nella root del progetto:
-     ```
-     NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id_here
-     ```
-   - Per GitHub Pages, aggiungi `NEXT_PUBLIC_FORMSPREE_ID` come secret nelle impostazioni del repository GitHub (Settings > Secrets and variables > Actions)
+3. Apri:
 
-6. Apri [http://localhost:3000](http://localhost:3000)
+- Sito: `http://localhost:3000`
+- CMS: `http://localhost:3000/admin`
 
-## Personalizzazione
+## Configurazione Decap CMS (GitHub Pages)
 
-- Modifica `components/Gallery.tsx` per aggiungere le tue opere
-- Aggiorna `components/Header.tsx` per aggiungere il logo
-- Personalizza i colori e i font in `app/globals.css` e nei CSS modules
+Il CMS e gia integrato in:
 
+- `public/admin/index.html`
+- `public/admin/config.yml`
 
+Prima di usarlo in produzione, aggiorna `public/admin/config.yml`:
 
+- `backend.repo`: `OWNER/REPO` reale GitHub
+- `backend.branch`: branch di deploy (qui `master`)
 
+### Nota importante su autenticazione
 
+Con deploy su GitHub Pages, il backend `github` di Decap richiede un provider OAuth (un piccolo servizio auth esterno) per il login e il commit dal browser.
 
+In pratica:
 
+1. crei una GitHub OAuth App
+2. configuri un OAuth provider per Decap
+3. colleghi `config.yml` al provider (`base_url` e `auth_endpoint`, se necessario)
+
+Senza questo passaggio, `/admin` si apre ma non potra autenticarsi per salvare su GitHub.
+
+Guida pronta per questo progetto: `DECAP_OAUTH_SETUP.md`.
+
+## Deploy
+
+Deploy automatico con GitHub Actions in `.github/workflows/deploy.yml`.
+
+Secrets usati:
+
+- `NEXT_PUBLIC_FORMSPREE_ID`
+- `GOOGLE_SEARCH_CONSOLE_VERIFICATION`

@@ -1,5 +1,4 @@
-// Dati delle opere d'arte UltraStruttura
-// Modifica questo file per personalizzare titoli, anni, dimensioni, ecc.
+import siteContentData from './site-content.json'
 
 export interface Artwork {
   id: number
@@ -9,208 +8,70 @@ export interface Artwork {
   dimensions?: string
   location?: string
   image: string
-  available?: boolean // true = disponibile, false = venduto, undefined = disponibile (default)
+  available?: boolean
 }
 
-export const artworks: Artwork[] = [
-  {
-    id: 25,
-    title: 'Opera 25',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp',
-  },
-  {
-    id: 2,
-    title: 'Opera 2',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/unique-abstract-artwork-02-opera-arte-astratta-unica-02-oeuvre-art-abstraite-unique-02-einzigartiges-abstraktes-kunstwerk-02.webp',
-  },
-  {
-    id: 3,
-    title: 'Opera 3',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-abstract-painting-on-canvas-03-dipinto-astratto-su-tela-03-peinture-abstraite-sur-toile-03-abstraktes-gemaelde-auf-leinwand-03.webp',
-  },
-  {
-    id: 4,
-    title: 'Opera 4',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/contemporary-abstract-art-for-collectors-04-arte-astratta-per-collezionisti-04-art-abstrait-pour-collectionneurs-04-abstrakte-kunst-fuer-sammler-04.webp',
-  },
-  {
-    id: 5,
-    title: 'Opera 5',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-05-dipinto-astratto-contemporaneo-05-peinture-abstraite-contemporaine-05-zeitgenoessisches-abstraktes-gemaelde-05.webp',
-  },
-  {
-    id: 6,
-    title: 'Opera 6',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/unique-abstract-artwork-06-opera-arte-astratta-unica-06-oeuvre-art-abstraite-unique-06-einzigartiges-abstraktes-kunstwerk-06.webp',
-  },
-  {
-    id: 7,
-    title: 'Opera 7',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-abstract-painting-on-canvas-07-dipinto-astratto-su-tela-07-peinture-abstraite-sur-toile-07-abstraktes-gemaelde-auf-leinwand-07.webp',
-  },
-  {
-    id: 8,
-    title: 'Opera 8',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/contemporary-abstract-art-for-collectors-08-arte-astratta-per-collezionisti-08-art-abstrait-pour-collectionneurs-08-abstrakte-kunst-fuer-sammler-08.webp',
-  },
-  {
-    id: 9,
-    title: 'Opera 9',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-09-dipinto-astratto-contemporaneo-09-peinture-abstraite-contemporaine-09-zeitgenoessisches-abstraktes-gemaelde-09.webp',
-  },
-  {
-    id: 10,
-    title: 'Opera 10',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/unique-abstract-artwork-10-opera-arte-astratta-unica-10-oeuvre-art-abstraite-unique-10-einzigartiges-abstraktes-kunstwerk-10.webp',
-  },
-  {
-    id: 11,
-    title: 'Opera 11',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-abstract-painting-on-canvas-11-dipinto-astratto-su-tela-11-peinture-abstraite-sur-toile-11-abstraktes-gemaelde-auf-leinwand-11.webp',
-  },
-  {
-    id: 12,
-    title: 'Opera 12',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/contemporary-abstract-art-for-collectors-12-arte-astratta-per-collezionisti-12-art-abstrait-pour-collectionneurs-12-abstrakte-kunst-fuer-sammler-12.webp',
-  },
-  {
-    id: 13,
-    title: 'Opera 13',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-13-dipinto-astratto-contemporaneo-13-peinture-abstraite-contemporaine-13-zeitgenoessisches-abstraktes-gemaelde-13.webp',
-  },
-  {
-    id: 14,
-    title: 'Opera 14',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/unique-abstract-artwork-14-opera-arte-astratta-unica-14-oeuvre-art-abstraite-unique-14-einzigartiges-abstraktes-kunstwerk-14.webp',
-  },
-  {
-    id: 15,
-    title: 'Opera 15',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-abstract-painting-on-canvas-15-dipinto-astratto-su-tela-15-peinture-abstraite-sur-toile-15-abstraktes-gemaelde-auf-leinwand-15.webp',
-  },
-  {
-    id: 16,
-    title: 'Opera 16',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/contemporary-abstract-art-for-collectors-16-arte-astratta-per-collezionisti-16-art-abstrait-pour-collectionneurs-16-abstrakte-kunst-fuer-sammler-16.webp',
-  },
-  {
-    id: 17,
-    title: 'Opera 17',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-17-dipinto-astratto-contemporaneo-17-peinture-abstraite-contemporaine-17-zeitgenoessisches-abstraktes-gemaelde-17.webp',
-  },
-  {
-    id: 18,
-    title: 'Opera 18',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/unique-abstract-artwork-18-opera-arte-astratta-unica-18-oeuvre-art-abstraite-unique-18-einzigartiges-abstraktes-kunstwerk-18.webp',
-  },
-  {
-    id: 19,
-    title: 'Opera 19',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-abstract-painting-on-canvas-19-dipinto-astratto-su-tela-19-peinture-abstraite-sur-toile-19-abstraktes-gemaelde-auf-leinwand-19.webp',
-  },
-  {
-    id: 20,
-    title: 'Opera 20',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/contemporary-abstract-art-for-collectors-20-arte-astratta-per-collezionisti-20-art-abstrait-pour-collectionneurs-20-abstrakte-kunst-fuer-sammler-20.webp',
-  },
-  {
-    id: 21,
-    title: 'Opera 21',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-21-dipinto-astratto-contemporaneo-21-peinture-abstraite-contemporaine-21-zeitgenoessisches-abstraktes-gemaelde-21.webp',
-  },
-  {
-    id: 22,
-    title: 'Opera 22',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/unique-abstract-artwork-22-opera-arte-astratta-unica-22-oeuvre-art-abstraite-unique-22-einzigartiges-abstraktes-kunstwerk-22.webp',
-  },
-  {
-    id: 23,
-    title: 'Opera 23',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-abstract-painting-on-canvas-23-dipinto-astratto-su-tela-23-peinture-abstraite-sur-toile-23-abstraktes-gemaelde-auf-leinwand-23.webp',
-  },
-  {
-    id: 24,
-    title: 'Opera 24',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/contemporary-abstract-art-for-collectors-24-arte-astratta-per-collezionisti-24-art-abstrait-pour-collectionneurs-24-abstrakte-kunst-fuer-sammler-24.webp',
-  },
-  {
-    id: 1,
-    title: 'Opera 1',
-    year: 2025,
-    medium: 'Olio su tela',
-    dimensions: '84 x 62 inches',
-    image: '/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp',
-  },
-]
+export interface SiteSettings {
+  brandName: string
+  artistName: string
+  artistLabel: string
+  seoTitle: string
+  seoDescription: string
+}
+
+interface SocialLinks {
+  instagram: string
+  twitterHandle: string
+}
+
+interface SiteContent {
+  site?: Partial<SiteSettings>
+  social?: Partial<SocialLinks>
+  artworks?: Array<Partial<Artwork>>
+}
+
+const content = siteContentData as SiteContent
+
+const defaultSiteSettings: SiteSettings = {
+  brandName: 'UltraStruttura',
+  artistName: 'Andrea Baldelli',
+  artistLabel: 'Andrea Baldelli',
+  seoTitle: 'UltraStruttura | Contemporary Abstract Paintings & Art',
+  seoDescription:
+    'Discover unique contemporary abstract paintings by UltraStruttura. Original abstract artwork on canvas for collectors.',
+}
+
+export const siteSettings: SiteSettings = {
+  brandName: content.site?.brandName || defaultSiteSettings.brandName,
+  artistName: content.site?.artistName || defaultSiteSettings.artistName,
+  artistLabel: content.site?.artistLabel || defaultSiteSettings.artistLabel,
+  seoTitle: content.site?.seoTitle || defaultSiteSettings.seoTitle,
+  seoDescription: content.site?.seoDescription || defaultSiteSettings.seoDescription,
+}
+
+export const socialLinks: SocialLinks = {
+  instagram: content.social?.instagram || 'https://www.instagram.com/ultrastruttura/',
+  twitterHandle: content.social?.twitterHandle || '@ultrastruttura',
+}
+
+const rawArtworks = Array.isArray(content.artworks) ? content.artworks : []
+
+export const artworks: Artwork[] = rawArtworks
+  .reduce<Artwork[]>((items, artwork, index) => {
+    const image = typeof artwork.image === 'string' ? artwork.image.trim() : ''
+    if (!image) return items
+
+    items.push({
+      id: typeof artwork.id === 'number' ? artwork.id : index + 1,
+      title: typeof artwork.title === 'string' ? artwork.title : `Opera ${index + 1}`,
+      year: typeof artwork.year === 'number' ? artwork.year : new Date().getFullYear(),
+      medium: typeof artwork.medium === 'string' ? artwork.medium : undefined,
+      dimensions: typeof artwork.dimensions === 'string' ? artwork.dimensions : undefined,
+      location: typeof artwork.location === 'string' ? artwork.location : undefined,
+      image,
+      available: typeof artwork.available === 'boolean' ? artwork.available : undefined,
+    })
+
+    return items
+  }, [])
+  

@@ -149,7 +149,7 @@ export default function Gallery() {
       <div className={styles.gallery}>
         <div className={styles.galleryContainer}>
           <p style={{ textAlign: 'center', padding: '4rem' }}>
-            Aggiungi le tue opere in <code>data/artworks.ts</code>
+            Aggiungi le tue opere in <code>data/site-content.json</code>
           </p>
         </div>
       </div>

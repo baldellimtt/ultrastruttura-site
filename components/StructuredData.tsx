@@ -1,4 +1,4 @@
-import { artworks } from '@/data/artworks'
+import { artworks, siteSettings, socialLinks } from '@/data/artworks'
 
 export default function StructuredData() {
   const baseUrl = 'https://ultrastruttura.com'
@@ -8,9 +8,9 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'ArtGallery',
     '@id': `${baseUrl}#gallery`,
-    name: 'ultrastruttura',
-    alternateName: 'UltraStruttura',
-    description: 'Contemporary abstract paintings by UltraStruttura. Unique abstract artwork, original abstract painting on canvas for collectors worldwide.',
+    name: siteSettings.brandName.toLowerCase(),
+    alternateName: siteSettings.brandName,
+    description: siteSettings.seoDescription,
     url: baseUrl,
     image: {
       '@type': 'ImageObject',
@@ -23,7 +23,7 @@ export default function StructuredData() {
       contentUrl: `${baseUrl}/logo.webp`,
     },
     sameAs: [
-      'https://www.instagram.com/ultrastruttura/',
+      socialLinks.instagram,
     ],
     address: {
       '@type': 'PostalAddress',
@@ -44,14 +44,14 @@ export default function StructuredData() {
       '@type': 'VisualArtwork',
       '@id': `${baseUrl}#artwork-${artwork.id}`,
       name: artwork.title,
-      alternateName: `UltraStruttura ${artwork.title} ${artwork.year}`,
-      description: `${artwork.title} (${artwork.year}) - Original contemporary abstract painting by UltraStruttura. ${artwork.medium || 'Oil on canvas'}${artwork.dimensions ? `, ${artwork.dimensions}` : ''}. Unique abstract artwork for collectors.`,
+      alternateName: `${siteSettings.brandName} ${artwork.title} ${artwork.year}`,
+      description: `${artwork.title} (${artwork.year}) - Original contemporary abstract painting by ${siteSettings.brandName}. ${artwork.medium || 'Oil on canvas'}${artwork.dimensions ? `, ${artwork.dimensions}` : ''}. Unique abstract artwork for collectors.`,
       creator: {
         '@type': 'Person',
         '@id': `${baseUrl}#artist`,
-        name: 'UltraStruttura',
-        givenName: 'Andrea',
-        familyName: 'Baldelli',
+        name: siteSettings.brandName,
+        givenName: siteSettings.artistName.split(' ')[0] || siteSettings.artistName,
+        familyName: siteSettings.artistName.split(' ').slice(1).join(' ') || siteSettings.artistName,
       },
       dateCreated: artwork.year?.toString(),
       copyrightYear: artwork.year?.toString(),
@@ -72,10 +72,10 @@ export default function StructuredData() {
       copyrightHolder: {
         '@type': 'Person',
         '@id': `${baseUrl}#artist`,
-        name: 'UltraStruttura',
+        name: siteSettings.brandName,
       },
       inLanguage: ['it', 'en', 'de', 'fr'],
-      keywords: `contemporary abstract art, abstract painting, ${artwork.medium?.toLowerCase() || 'oil on canvas'}, original artwork, UltraStruttura, contemporary artist`,
+      keywords: `contemporary abstract art, abstract painting, ${artwork.medium?.toLowerCase() || 'oil on canvas'}, original artwork, ${siteSettings.brandName}, contemporary artist`,
       material: artwork.medium || 'Oil on canvas',
       surface: 'Canvas',
     }
@@ -86,10 +86,10 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${baseUrl}#artist`,
-    name: 'UltraStruttura',
-    alternateName: 'Andrea Baldelli',
-    givenName: 'Andrea',
-    familyName: 'Baldelli',
+    name: siteSettings.brandName,
+    alternateName: siteSettings.artistName,
+    givenName: siteSettings.artistName.split(' ')[0] || siteSettings.artistName,
+    familyName: siteSettings.artistName.split(' ').slice(1).join(' ') || siteSettings.artistName,
     jobTitle: 'Contemporary Artist',
     description: 'Contemporary Italian artist from Bergamo, Italy, specializing in abstract oil paintings on canvas. Creating unique abstract artworks for collectors worldwide.',
     url: baseUrl,
@@ -99,7 +99,7 @@ export default function StructuredData() {
       contentUrl: `${baseUrl}/logo.webp`,
     },
     sameAs: [
-      'https://www.instagram.com/ultrastruttura/',
+      socialLinks.instagram,
     ],
     address: {
       '@type': 'PostalAddress',
@@ -164,8 +164,8 @@ export default function StructuredData() {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             '@id': `${baseUrl}#collection`,
-            name: 'UltraStruttura Art Collection',
-            description: 'Collection of contemporary abstract paintings by UltraStruttura',
+            name: `${siteSettings.brandName} Art Collection`,
+            description: `Collection of contemporary abstract paintings by ${siteSettings.brandName}`,
             url: baseUrl,
             mainEntity: {
               '@type': 'ItemList',
