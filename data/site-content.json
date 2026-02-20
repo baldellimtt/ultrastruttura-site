@@ -12,16 +12,6 @@
   },
   "artworks": [
     {
-      "available": true,
-      "id": 26,
-      "title": "Se la luce ci prende",
-      "year": 2026,
-      "medium": "Mixed media on canvas",
-      "dimensions": "50x70 cm",
-      "location": "Lonno, BG, Italy",
-      "image": "/artworks/img_1923.png"
-    },
-    {
       "id": 2,
       "title": "Opera 2",
       "year": 2025,
@@ -220,6 +210,16 @@
       "medium": "Olio su tela",
       "dimensions": "84 x 62 inches",
       "image": "/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp"
+    },
+    {
+      "available": true,
+      "id": 26,
+      "title": "Se la luce ci prende",
+      "year": 2026,
+      "medium": "Mixed media on canvas",
+      "dimensions": "50x70 cm",
+      "location": "Lonno, BG, Italy",
+      "image": "/artworks/img_1923.png"
     }
   ]
 }
