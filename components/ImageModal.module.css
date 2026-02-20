@@ -12,6 +12,8 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
   opacity: 0;
   animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   cursor: pointer;
@@ -26,11 +28,13 @@
 .modalContent {
   position: relative;
   max-width: 90vw;
-  max-height: 90vh;
+  max-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: default;
+  overflow-y: auto;
+  overflow-x: hidden;
   transform: scale(0.9);
   animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
@@ -43,8 +47,8 @@
 
 .closeButton {
   position: absolute;
-  top: -3rem;
-  right: 0;
+  top: 0.75rem;
+  right: 0.75rem;
   background: transparent;
   border: none;
   color: #ffffff;
@@ -116,7 +120,7 @@
 
 .modalImage {
   max-width: 100%;
-  max-height: 75vh;
+  max-height: min(68vh, calc(100vh - 22rem));
   width: auto;
   height: auto;
   object-fit: contain;
@@ -201,14 +205,15 @@
 
   .modalContent {
     max-width: 95vw;
+    max-height: calc(100vh - 2rem);
     /* GPU acceleration */
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
 
   .closeButton {
-    top: -2.5rem;
-    right: -0.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
     min-width: 44px;
     min-height: 44px;
     touch-action: manipulation;
@@ -238,7 +243,7 @@
   }
 
   .modalImage {
-    max-height: 70vh;
+    max-height: min(58vh, calc(100vh - 19rem));
     /* GPU acceleration per immagini grandi */
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
@@ -265,8 +270,8 @@
   }
 
   .closeButton {
-    top: -2rem;
-    right: 0;
+    top: 0.35rem;
+    right: 0.35rem;
     min-width: 44px;
     min-height: 44px;
   }
@@ -279,7 +284,7 @@
   }
 
   .modalImage {
-    max-height: 65vh;
+    max-height: min(52vh, calc(100vh - 16rem));
   }
 
   .artworkTitle {
