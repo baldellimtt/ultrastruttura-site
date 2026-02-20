@@ -9,6 +9,7 @@ export interface Artwork {
   dimensions?: string
   location?: string
   image: string
+  imageFull?: string
   available?: boolean
 }
 
@@ -29,6 +30,28 @@ interface SiteContent {
   site?: Partial<SiteSettings>
   social?: Partial<SocialLinks>
   artworks?: Array<Partial<Artwork>>
+}
+
+const parseOptionalString = (value: unknown): string | undefined => {
+  if (typeof value !== 'string') return undefined
+  const trimmed = value.trim()
+  return trimmed ? trimmed : undefined
+}
+
+const parseAvailability = (value: unknown): boolean => {
+  if (typeof value === 'boolean') return value
+  if (typeof value === 'string') {
+    const normalized = value.trim().toLowerCase()
+    if (['false', '0', 'venduto', 'sold', 'no', 'non disponibile'].includes(normalized)) {
+      return false
+    }
+    if (['true', '1', 'disponibile', 'available', 'si', 'sì', 'yes'].includes(normalized)) {
+      return true
+    }
+  }
+
+  // Default coerente con il CMS: se assente, l'opera e' considerata disponibile.
+  return true
 }
 
 const content = siteContentData as SiteContent
@@ -59,19 +82,21 @@ const rawArtworks = Array.isArray(content.artworks) ? content.artworks : []
 
 export const artworks: Artwork[] = rawArtworks
   .reduce<Artwork[]>((items, artwork, index) => {
-    const image = typeof artwork.image === 'string' ? artwork.image.trim() : ''
+    const image = parseOptionalString(artwork.image) || ''
+    const imageFull = parseOptionalString(artwork.imageFull) || ''
     if (!image) return items
 
     items.push({
       id: typeof artwork.id === 'number' ? artwork.id : index + 1,
-      title: typeof artwork.title === 'string' ? artwork.title : `Opera ${index + 1}`,
-      info: typeof artwork.info === 'string' ? artwork.info : undefined,
+      title: parseOptionalString(artwork.title) || `Opera ${index + 1}`,
+      info: parseOptionalString(artwork.info),
       year: typeof artwork.year === 'number' ? artwork.year : new Date().getFullYear(),
-      medium: typeof artwork.medium === 'string' ? artwork.medium : undefined,
-      dimensions: typeof artwork.dimensions === 'string' ? artwork.dimensions : undefined,
-      location: typeof artwork.location === 'string' ? artwork.location : undefined,
+      medium: parseOptionalString(artwork.medium),
+      dimensions: parseOptionalString(artwork.dimensions),
+      location: parseOptionalString(artwork.location),
       image,
-      available: typeof artwork.available === 'boolean' ? artwork.available : undefined,
+      imageFull: imageFull || undefined,
+      available: parseAvailability(artwork.available),
     })
 
     return items

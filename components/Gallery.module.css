@@ -78,6 +78,33 @@
   position: relative;
 }
 
+.statusBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 3;
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  backdrop-filter: blur(2px);
+}
+
+.statusAvailable {
+  background: rgba(16, 129, 67, 0.82);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.statusSold {
+  background: rgba(151, 32, 32, 0.84);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
 .skeletonContainer {
   position: absolute;
   top: 0;
@@ -104,8 +131,8 @@
   /* Nota: aspect-ratio può essere aggiunto se tutte le immagini hanno la stessa proporzione */
   /* aspect-ratio: 4 / 3; */
   /* Ottimizzazione rendering immagini */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  image-rendering: auto;
+  
   /* GPU acceleration per transizioni */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
@@ -142,6 +169,27 @@
 
 .artworkItem:hover .artworkImage {
   filter: brightness(0.95);
+}
+
+.artworkMeta {
+  margin-top: 0.75rem;
+  line-height: 1.35;
+}
+
+.artworkTitle {
+  margin: 0;
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  color: #111111;
+}
+
+.artworkInfo {
+  margin: 0.2rem 0 0;
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: rgba(17, 17, 17, 0.82);
 }
 
 @media (max-width: 1200px) {

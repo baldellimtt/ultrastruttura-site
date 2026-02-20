@@ -47,7 +47,15 @@ collections:
               - { label: Extra Info (under title), name: info, widget: string, required: false }
               - { label: Year, name: year, widget: number, value_type: int, min: 1900, max: 2100 }
               - { label: Medium, name: medium, widget: string, required: false }
-              - { label: Dimensions, name: dimensions, widget: string, required: false }
+              - { label: Dimensions (artwork size, not image resolution), name: dimensions, widget: string, required: false }
               - { label: Location, name: location, widget: string, required: false }
-              - { label: Image, name: image, widget: image }
-              - { label: Available, name: available, widget: boolean, required: false, default: true }
+              - label: Gallery Image
+                name: image
+                widget: image
+                hint: Upload a high-resolution original image (recommended long side >= 2400px).
+              - label: High-Resolution Image (Modal)
+                name: imageFull
+                widget: image
+                required: false
+                hint: Optional. If present, this image is used in the modal viewer to preserve maximum quality.
+              - { label: Disponibile (disattiva se venduto), name: available, widget: boolean, required: false, default: true, hint: "ON = Disponibile, OFF = Venduto" }

@@ -181,6 +181,11 @@ export default function Gallery() {
                   aria-label={`View ${artwork.title} (${artwork.year})`}
                 >
                   <div className={styles.imageWrapper}>
+                    <span
+                      className={`${styles.statusBadge} ${artwork.available ? styles.statusAvailable : styles.statusSold}`}
+                    >
+                      {artwork.available ? 'Disponibile' : 'Venduto'}
+                    </span>
                     {showSkeleton && (
                       <div className={styles.skeletonContainer}>
                         <ImageSkeleton />
@@ -202,6 +207,12 @@ export default function Gallery() {
                       onLoad={() => handleImageLoad(artwork.id)}
                       onError={() => handleImageLoad(artwork.id)}
                     />
+                  </div>
+                  <div className={styles.artworkMeta}>
+                    <p className={styles.artworkTitle}>
+                      {artwork.title} ({artwork.year})
+                    </p>
+                    {artwork.info && <p className={styles.artworkInfo}>{artwork.info}</p>}
                   </div>
                 </div>
               )

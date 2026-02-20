@@ -155,6 +155,29 @@
   opacity: 0.92;
 }
 
+.availabilityTag {
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.available {
+  background: rgba(16, 129, 67, 0.82);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.sold {
+  background: rgba(151, 32, 32, 0.84);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .modalOverlay {
     padding: 1rem;

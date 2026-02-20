@@ -23,6 +23,8 @@ export default function ImageModal({
   hasNext,
   hasPrevious,
 }: ImageModalProps) {
+  const modalImageSrc = artwork?.imageFull || artwork?.image || ''
+
   // Focus trap e keyboard navigation
   const modalRef = useRef<HTMLDivElement>(null)
   const previousActiveElementRef = useRef<HTMLElement | null>(null)
@@ -193,7 +195,7 @@ export default function ImageModal({
 
         <div className={styles.imageContainer}>
           <img
-            src={artwork.image}
+            src={modalImageSrc}
             alt={`${artwork.title} (${artwork.year || ''}) - Original Contemporary Abstract Painting by UltraStruttura | ${artwork.medium || 'Oil on canvas'} | ${artwork.dimensions || ''}`}
             className={styles.modalImage}
             loading="eager"
@@ -204,6 +206,13 @@ export default function ImageModal({
           <h2 id="artwork-title" className={styles.artworkTitle}>
             {artwork.title} ({artwork.year})
           </h2>
+          <p
+            className={`${styles.availabilityTag} ${
+              artwork.available ? styles.available : styles.sold
+            }`}
+          >
+            {artwork.available ? 'Disponibile' : 'Venduto'}
+          </p>
           {artwork.info && <p className={styles.artworkSubtitle}>{artwork.info}</p>}
         </div>
       </div>
