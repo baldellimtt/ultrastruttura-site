@@ -155,27 +155,40 @@
   opacity: 0.92;
 }
 
+.details {
+  margin-top: 0.65rem;
+}
+
+.detailItem {
+  margin: 0.2rem 0 0;
+  font-family: 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 .availabilityTag {
   display: inline-block;
   margin: 0.5rem 0 0;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  padding: 0.36rem 0.62rem;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  border: 1px solid transparent;
+  border: 1px solid;
+  font-weight: 500;
 }
 
 .available {
-  background: rgba(16, 129, 67, 0.82);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: rgba(20, 20, 20, 0.45);
+  border-color: rgba(215, 192, 138, 0.75);
+  color: #e8d8b4;
 }
 
 .sold {
-  background: rgba(151, 32, 32, 0.84);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: rgba(20, 20, 20, 0.45);
+  border-color: rgba(225, 225, 225, 0.42);
+  color: rgba(242, 242, 242, 0.9);
 }
 
 @media (max-width: 768px) {

@@ -208,12 +208,6 @@ export default function Gallery() {
                       onError={() => handleImageLoad(artwork.id)}
                     />
                   </div>
-                  <div className={styles.artworkMeta}>
-                    <p className={styles.artworkTitle}>
-                      {artwork.title} ({artwork.year})
-                    </p>
-                    {artwork.info && <p className={styles.artworkInfo}>{artwork.info}</p>}
-                  </div>
                 </div>
               )
             })}

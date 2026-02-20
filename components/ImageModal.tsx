@@ -214,6 +214,11 @@ export default function ImageModal({
             {artwork.available ? 'Disponibile' : 'Venduto'}
           </p>
           {artwork.info && <p className={styles.artworkSubtitle}>{artwork.info}</p>}
+          <div className={styles.details}>
+            {artwork.medium && <p className={styles.detailItem}>Tecnica: {artwork.medium}</p>}
+            {artwork.dimensions && <p className={styles.detailItem}>Dimensioni: {artwork.dimensions}</p>}
+            {artwork.location && <p className={styles.detailItem}>Luogo: {artwork.location}</p>}
+          </div>
         </div>
       </div>
     </div>
