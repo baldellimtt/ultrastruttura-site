@@ -181,11 +181,6 @@ export default function Gallery() {
                   aria-label={`View ${artwork.title} (${artwork.year})`}
                 >
                   <div className={styles.imageWrapper}>
-                    <span
-                      className={`${styles.statusBadge} ${artwork.available ? styles.statusAvailable : styles.statusSold}`}
-                    >
-                      {artwork.available ? 'Disponibile' : 'Venduto'}
-                    </span>
                     {showSkeleton && (
                       <div className={styles.skeletonContainer}>
                         <ImageSkeleton />
