@@ -207,13 +207,14 @@
     },
     {
       "available": true,
-      "id": 27,
-      "title": "\"Dunkelheit\"",
-      "year": 2026,
-      "medium": "Mixed media on canvas",
+      "imageFull": "/artworks/dunkelheit.jpg",
       "dimensions": "50x75 cm",
+      "medium": "Mixed media on canvas",
       "location": "Bergamo, Italy",
-      "image": "/artworks/dunkelheit.jpg"
+      "title": "\"Dunkelheit\"",
+      "id": 27,
+      "image": "/artworks/dunkelheit.jpg",
+      "year": 2026
     }
   ]
 }
