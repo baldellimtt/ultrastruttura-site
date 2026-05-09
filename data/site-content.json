@@ -22,22 +22,6 @@
       "image": "/artworks/img_1923.png"
     },
     {
-      "id": 2,
-      "title": "Opera 2",
-      "year": 2025,
-      "medium": "Olio su tela",
-      "dimensions": "84 x 62 cm",
-      "image": "/artworks/unique-abstract-artwork-02-opera-arte-astratta-unica-02-oeuvre-art-abstraite-unique-02-einzigartiges-abstraktes-kunstwerk-02.webp"
-    },
-    {
-      "id": 25,
-      "title": "Opera Prima",
-      "year": 2025,
-      "medium": "Olio su tela",
-      "dimensions": "84 x 62 cm",
-      "image": "/artworks/original-contemporary-abstract-painting-25-dipinto-astratto-contemporaneo-25-peinture-abstraite-contemporaine-25-zeitgenoessisches-abstraktes-gemaelde-25.webp"
-    },
-    {
       "id": 3,
       "title": "Opera 3",
       "year": 2025,
@@ -220,6 +204,16 @@
       "medium": "Olio su tela",
       "dimensions": "84 x 62 cm",
       "image": "/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp"
+    },
+    {
+      "available": true,
+      "id": 27,
+      "title": "\"Dunkelheit\"",
+      "year": 2026,
+      "medium": "Mixed media on canvas",
+      "dimensions": "50x75 cm",
+      "location": "Bergamo, Italy",
+      "image": "/artworks/dunkelheit.jpg"
     }
   ]
 }
