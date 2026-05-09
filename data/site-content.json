@@ -13,6 +13,17 @@
   "artworks": [
     {
       "available": true,
+      "imageFull": "/artworks/dunkelheit.jpg",
+      "dimensions": "50x75 cm",
+      "medium": "Mixed media on canvas",
+      "location": "Bergamo, Italy",
+      "title": "\"Dunkelheit\"",
+      "id": 27,
+      "image": "/artworks/dunkelheit.jpg",
+      "year": 2026
+    },
+    {
+      "available": true,
       "id": 26,
       "title": "\"Se la luce ci prende\"",
       "year": 2026,
@@ -204,17 +215,6 @@
       "medium": "Olio su tela",
       "dimensions": "84 x 62 cm",
       "image": "/artworks/original-contemporary-abstract-painting-01-dipinto-astratto-contemporaneo-01-peinture-abstraite-contemporaine-01-zeitgenoessisches-abstraktes-gemaelde-01.webp"
-    },
-    {
-      "available": true,
-      "imageFull": "/artworks/dunkelheit.jpg",
-      "dimensions": "50x75 cm",
-      "medium": "Mixed media on canvas",
-      "location": "Bergamo, Italy",
-      "title": "\"Dunkelheit\"",
-      "id": 27,
-      "image": "/artworks/dunkelheit.jpg",
-      "year": 2026
     }
   ]
 }
