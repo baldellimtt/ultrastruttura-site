@@ -49,20 +49,13 @@
       "image": "/artworks/contemporary-abstract-art-for-collectors-04-arte-astratta-per-collezionisti-04-art-abstrait-pour-collectionneurs-04-abstrakte-kunst-fuer-sammler-04.webp"
     },
     {
-      "id": 5,
-      "title": "Opera 5",
-      "year": 2025,
-      "medium": "Olio su tela",
-      "dimensions": "84 x 62 cm",
-      "image": "/artworks/original-contemporary-abstract-painting-05-dipinto-astratto-contemporaneo-05-peinture-abstraite-contemporaine-05-zeitgenoessisches-abstraktes-gemaelde-05.webp"
-    },
-    {
       "id": 6,
-      "title": "Opera 6",
-      "year": 2025,
-      "medium": "Olio su tela",
-      "dimensions": "84 x 62 cm",
-      "image": "/artworks/unique-abstract-artwork-06-opera-arte-astratta-unica-06-oeuvre-art-abstraite-unique-06-einzigartiges-abstraktes-kunstwerk-06.webp"
+      "title": "\"VI gora\"",
+      "year": 2020,
+      "medium": "Acrilico e resina epossidica su zinco",
+      "dimensions": "20x30x2 cm",
+      "image": "/artworks/unique-abstract-artwork-06-opera-arte-astratta-unica-06-oeuvre-art-abstraite-unique-06-einzigartiges-abstraktes-kunstwerk-06.webp",
+      "available": false
     },
     {
       "id": 7,
